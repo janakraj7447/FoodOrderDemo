@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\NS.FoodOrder.Models\NS.FoodOrder.Models.csproj" />
+    <ProjectReference Include="..\NS.FoodOrder.Repository\NS.FoodOrder.Repository.csproj" />
+    <ProjectReference Include="..\NS.FoodOrder.Data\NS.FoodOrder.Data.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

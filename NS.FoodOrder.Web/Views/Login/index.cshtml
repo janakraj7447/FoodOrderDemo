@@ -1,0 +1,75 @@
+@model NS.FoodOrder.Models.Customer;
+
+<style>
+    body {
+        background-color: #F2F2F2;
+        font-family: Arial, sans-serif;
+    }
+    h1 {
+        text-align: center;
+        margin-top: 50px;
+    }
+    form {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 30px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="password"] {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+    }
+    button[type="submit"] {
+        background-color: #4CAF50;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px;
+        width: 100%;
+    }
+    button[type="submit"]:hover {
+        background-color: #3E8E41;
+    }
+</style>
+
+<h1>Login Page</h1>
+<div>
+    <span>@ViewData["Errormsg"]</span>
+    @using(Html.BeginForm("LoginPage","Login",FormMethod.Post)){
+        <div class="form-group">
+         <label for="UserName" class="col-md-3 control-label">Email</label>
+        <div class="col-md-9">
+        @Html.TextBoxFor(x => x.Email, "", new { @class = "form-control", placeholder = "Enter your Email" })
+       </div>
+       </div>
+<br/>
+ <div class="form-group">
+         <label for="Password" class="col-md-3 control-label">Password</label>
+        <div class="col-md-9">
+       @Html.PasswordFor(x => x.Password, new { @class = "form-control", placeholder = "Enter your Password" })
+       </div>
+       </div>
+<br/>
+        <div>
+            <button type="submit">login</button>
+        </div>
+        <a asp-controller="Home" asp-action="Index"><h6 class="text-center pt-2">New User,SignUp here</h6></a>
+    }
+</div>

@@ -1,0 +1,135 @@
+﻿@model NS.FoodOrder.Models.Customer
+@{
+   
+}
+<h2 class="text-center">Create New Account</h2>
+
+@using (Html.BeginForm("AddUser", "Home", FormMethod.Post, new {id="formRegistration",enctype="multipart/form-data"}))
+{
+<div class="form-group">
+   <label for="First Name" class="col-md-3 control-label">First Name</label>
+    <div class="col-md-9">
+      @Html.HiddenFor(x=>x.Id)
+      @Html.TextBoxFor(x =>x.FirstName, "", new { @class = "form-control", placeholder = "Enter your First name here" })
+    @Html.ValidationMessageFor(x => x.FirstName,"",new{@class="text-danger"})
+   </div>
+</div>
+<br/>
+<div class="form-group">
+   <label for="First Name" class="col-md-3 control-label">Last Name</label>
+    <div class="col-md-9">
+      @Html.HiddenFor(x=>x.Id)
+      @Html.TextBoxFor(x =>x.LastName, "", new { @class = "form-control", placeholder = "Enter your Last name here" })
+    @Html.ValidationMessageFor(x => x.LastName,"",new{@class="text-danger"})
+   </div>
+</div>
+<br/>
+
+@* <div class="form-group">
+    <label for="Role" class="col-md-3 control-label">Role</label>
+    <div class="col-md-9">
+        @Html.DropDownListFor(x => x.RoleId,
+            new SelectList(Enum.GetValues(typeof(SelectRoleId))),
+            "Select your Role",new{@class="form-control"})
+             @Html.ValidationMessageFor(x => x.RoleId,"",new{@class="text-danger"} )
+    </div>
+</div>
+<br/> *@
+
+<div class="form-group">
+   <label for="lastname" class="col-md-3 control-label">ProfilePic</label>
+<div class="col-md-9">
+   <input type="file" name="ProfilePic"/>
+     @Html.ValidationMessageFor(x => x.ProfilePic,"",new{@class="text-danger"})
+</div>
+</div>
+<br/>
+<div class="form-group">
+   <label for="email" class="col-md-3 control-label">Age</label>
+<div class="col-md-9">
+   @Html.TextBoxFor(x => x.Age, "", new { @class = "form-control", placeholder = "Enter your Age" })
+   @Html.ValidationMessageFor(x => x.Age,"",new{@class="text-danger"})
+   </div>
+</div>
+<br/>
+<div class="form-group">
+   <label for="password" class="col-md-3 control-label">Address</label>
+<div class="col-md-9">
+   @Html.TextBoxFor(x => x.Address, new { @class = "form-control", placeholder = "Enter your address here" })
+    @Html.ValidationMessageFor(x => x.Address,"",new{@class="text-danger"})
+</div>
+</div>
+<br/>
+<div class="form-group">
+   <label for="contact" class="col-md-3 control-label">City</label>
+<div class="col-md-9">
+   @Html.TextBoxFor(x => x.City, new { @class = "form-control", placeholder = "Enter your City" })
+   @Html.ValidationMessageFor(x => x.City,"",new{@class="text-danger"})
+</div>
+</div>
+<br />
+<div class="form-group">
+   <label for="contact" class="col-md-3 control-label">State</label>
+<div class="col-md-9">
+   @Html.TextBoxFor(x => x.State, new { @class = "form-control", placeholder = "Enter your State" })
+   @Html.ValidationMessageFor(x => x.State,"",new{@class="text-danger"})
+</div>
+</div>
+<br />
+<div class="form-group">
+   <label for="contact" class="col-md-3 control-label">Country</label>
+<div class="col-md-9">
+   @Html.TextBoxFor(x => x.Country, new { @class = "form-control", placeholder = "Enter your Country" })
+   @Html.ValidationMessageFor(x => x.Country,"",new{@class="text-danger"})
+</div>
+</div>
+<br />
+<div class="form-group">
+   <label for="contact" class="col-md-3 control-label">PinCode</label>
+<div class="col-md-9">
+   @Html.TextBoxFor(x => x.PinCode, new { @class = "form-control", placeholder = "Enter your PinCode" })
+   @Html.ValidationMessageFor(x => x.PinCode,"",new{@class="text-danger"})
+</div>
+</div>
+<br/>
+<div class="form-group">
+   <label for="contact" class="col-md-3 control-label">Phone Number</label>
+<div class="col-md-9">
+   @Html.TextBoxFor(x => x.PhoneNo, new { @class = "form-control", placeholder = "Enter your Phone Number" })
+   @Html.ValidationMessageFor(x => x.PhoneNo,"",new{@class="text-danger"})
+</div>
+</div>
+<br/>
+
+<div class="form-group">
+   <label for="contact" class="col-md-3 control-label">Email</label>
+<div class="col-md-9">
+   @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Enter your Email" })
+   @Html.ValidationMessageFor(x => x.Email,"",new{@class="text-danger"})
+</div>
+</div>
+<br/>
+
+<div class="form-group">
+   <label for="contact" class="col-md-3 control-label">Password</label>
+<div class="col-md-9">
+   @Html.TextBoxFor(x => x.Password , new { @class = "form-control", placeholder = "Enter your password" })
+   @Html.ValidationMessageFor(x => x.Password,"",new{@class="text-danger"} )
+</div>
+</div>
+<br/>
+<div class="form-group">
+   <label for="contact" class="col-md-3 control-label">Confirm Password</label>
+<div class="col-md-9">
+   @Html.TextBoxFor(x => x.ConfirmPassword , new { @class = "form-control", placeholder = "Enter your password again" })
+   @Html.ValidationMessageFor(x => x.ConfirmPassword,"",new{@class="text-danger"} )
+</div>
+</div>
+<br/>
+
+<div class="col-md-offset-3 col-md-9">
+   <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Submit</button>
+   <span style="margin-left:8px;"></span>
+</div>
+}
+

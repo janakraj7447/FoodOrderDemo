@@ -1,0 +1,196 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Repository\\NS.FoodOrder.Repository.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Data\\NS.FoodOrder.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Data\\NS.FoodOrder.Data.csproj",
+        "projectName": "NS.FoodOrder.Data",
+        "projectPath": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Data\\NS.FoodOrder.Data.csproj",
+        "packagesPath": "C:\\Users\\janak.raj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\janak.raj\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Models\\NS.FoodOrder.Models.csproj": {
+                "projectPath": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Models\\NS.FoodOrder.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Models\\NS.FoodOrder.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Models\\NS.FoodOrder.Models.csproj",
+        "projectName": "NS.FoodOrder.Models",
+        "projectPath": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Models\\NS.FoodOrder.Models.csproj",
+        "packagesPath": "C:\\Users\\janak.raj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\janak.raj\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Repository\\NS.FoodOrder.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Repository\\NS.FoodOrder.Repository.csproj",
+        "projectName": "NS.FoodOrder.Repository",
+        "projectPath": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Repository\\NS.FoodOrder.Repository.csproj",
+        "packagesPath": "C:\\Users\\janak.raj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\janak.raj\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Data\\NS.FoodOrder.Data.csproj": {
+                "projectPath": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Data\\NS.FoodOrder.Data.csproj"
+              },
+              "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Models\\NS.FoodOrder.Models.csproj": {
+                "projectPath": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Models\\NS.FoodOrder.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

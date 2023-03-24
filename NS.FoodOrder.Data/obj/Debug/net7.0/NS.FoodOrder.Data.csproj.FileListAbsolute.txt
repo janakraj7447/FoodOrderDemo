@@ -1,0 +1,17 @@
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\bin\Debug\net7.0\NS.FoodOrder.Data.deps.json
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\bin\Debug\net7.0\NS.FoodOrder.Data.dll
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\bin\Debug\net7.0\NS.FoodOrder.Data.pdb
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\bin\Debug\net7.0\NS.FoodOrder.Models.dll
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\bin\Debug\net7.0\NS.FoodOrder.Models.pdb
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\obj\Debug\net7.0\NS.FoodOrder.Data.csproj.AssemblyReference.cache
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\obj\Debug\net7.0\NS.FoodOrder.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\obj\Debug\net7.0\NS.FoodOrder.Data.AssemblyInfoInputs.cache
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\obj\Debug\net7.0\NS.FoodOrder.Data.AssemblyInfo.cs
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\obj\Debug\net7.0\NS.FoodOrder.Data.csproj.CoreCompileInputs.cache
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\obj\Debug\net7.0\NS.FoodOrder.Data.csproj.CopyComplete
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\obj\Debug\net7.0\NS.FoodOrder.Data.dll
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\obj\Debug\net7.0\refint\NS.FoodOrder.Data.dll
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\obj\Debug\net7.0\NS.FoodOrder.Data.pdb
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\obj\Debug\net7.0\ref\NS.FoodOrder.Data.dll
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\bin\Debug\net7.0\NS.FoodOrder.Data.runtimeconfig.json
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Data\obj\Debug\net7.0\NS.FoodOrder.Data.genruntimeconfig.cache
