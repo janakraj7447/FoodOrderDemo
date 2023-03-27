@@ -1,20 +1,21 @@
 using NS.FoodOrder.Data.Entities;
-using NS.FoodOrder.Models;
+using NS.FoodOrder.Data.CustomEntities;
 namespace NS.FoodOrder.Repository
 {
     public class UserRepository : IUserRepository
     {
+        private readonly FoodOrderDBContext _ctx;
+        public UserRepository(FoodOrderDBContext ctx){
+            _ctx=ctx;
+        }
+
         public User LoginPage(Customer customer)
         {
-            using (var context = new FoodOrderDBContext())
-            {
-              return context.Users.Where(x => x.Email == customer.Email).FirstOrDefault();
-            }
+            return _ctx.Users.Where(x => x.Email == customer.Email).FirstOrDefault();
         }
 
         public bool AddUser(Customer customer){
-             using (var context = new FoodOrderDBContext())
-        {
+            
             User user = new User();
             user.FirstName = customer.FirstName;
             user.LastName = customer.LastName;
@@ -35,11 +36,15 @@ namespace NS.FoodOrder.Repository
             user.IsActive=true;
 
 
-            context.Add(user);
+            _ctx.Add(user);
 
-            context.SaveChanges();
-        }
+            _ctx.SaveChanges();
+        
         return true;
         }
+
+         public bool VerifyEmail(string email){
+           return _ctx.Users.Any(x=>x.Email==email);
+         }
     }
 }

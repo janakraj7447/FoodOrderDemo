@@ -5,6 +5,22 @@
       "PackagePath": "staticwebassets\\NS.FoodOrder.Web.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\Screenshot (6).png",
+      "PackagePath": "staticwebassets\\Uploads\\Screenshot (6).png"
+    },
+    {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\Screenshot (7).png",
+      "PackagePath": "staticwebassets\\Uploads\\Screenshot (7).png"
+    },
+    {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\Screenshot (8).png",
+      "PackagePath": "staticwebassets\\Uploads\\Screenshot (8).png"
+    },
+    {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\Screenshot (9).png",
+      "PackagePath": "staticwebassets\\Uploads\\Screenshot (9).png"
+    },
+    {
       "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

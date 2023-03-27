@@ -2,8 +2,6 @@ C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Repository\bin\Debug\net7.0\NS.FoodOrd
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Repository\bin\Debug\net7.0\NS.FoodOrder.Repository.dll
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Repository\bin\Debug\net7.0\NS.FoodOrder.Repository.pdb
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Repository\bin\Debug\net7.0\NS.FoodOrder.Data.dll
-C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Repository\bin\Debug\net7.0\NS.FoodOrder.Models.dll
-C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Repository\bin\Debug\net7.0\NS.FoodOrder.Models.pdb
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Repository\bin\Debug\net7.0\NS.FoodOrder.Data.pdb
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Repository\obj\Debug\net7.0\NS.FoodOrder.Repository.csproj.AssemblyReference.cache
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Repository\obj\Debug\net7.0\NS.FoodOrder.Repository.GeneratedMSBuildEditorConfig.editorconfig

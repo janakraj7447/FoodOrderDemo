@@ -1,9 +1,10 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using NS.FoodOrder.Models;
+using NS.FoodOrder.Data.CustomEntities;
 using NS.FoodOrder.Data;
 using NS.FoodOrder.Business;
 using NS.FoodOrder.Web.Models;
+using NS.FoodOrder.Data.Entities;
 
 namespace Foodorder.Controllers;
 
@@ -13,11 +14,11 @@ public class HomeController : Controller
     public readonly IUserBussiness _iUserBussiness;
 
     private Microsoft.AspNetCore.Hosting.IHostingEnvironment Environment;
-    public HomeController(ILogger<HomeController> logger, Microsoft.AspNetCore.Hosting.IHostingEnvironment _environment,IUserBussiness iUserBussiness)
+    public HomeController(ILogger<HomeController> logger, Microsoft.AspNetCore.Hosting.IHostingEnvironment _environment, IUserBussiness iUserBussiness)
     {
         _logger = logger;
         Environment = _environment;
-          _iUserBussiness=iUserBussiness;
+        _iUserBussiness = iUserBussiness;
     }
 
     public IActionResult Index()
@@ -26,6 +27,18 @@ public class HomeController : Controller
     }
 
     public IActionResult Privacy()
+    {
+        return View();
+    }
+    public IActionResult About()
+    {
+        return View();
+    }
+    public IActionResult Menu()
+    {
+        return View();
+    }
+    public IActionResult Contact()
     {
         return View();
     }
@@ -48,9 +61,9 @@ public class HomeController : Controller
             uploadedFiles.Add(fileName);
             ViewBag.Message += string.Format("<b>{0}</b> Profile pic uploaded.<br />", fileName);
         }
-        customer.Password=BCrypt.Net.BCrypt.HashPassword(customer.Password);
-        customer.ProfilePic=fileName;
-          _iUserBussiness.AddUser(customer);
+        customer.Password = BCrypt.Net.BCrypt.HashPassword(customer.Password);
+        customer.ProfilePic = fileName;
+        _iUserBussiness.AddUser(customer);
         return RedirectToAction(actionName: "Index", controllerName: "Login");
         // return View();
     }
@@ -60,9 +73,24 @@ public class HomeController : Controller
         return View();
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    [AcceptVerbs("GET", "POST")]
+    public IActionResult VerifyEmail(string email)
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        // if (!_userService.VerifyEmail(email))
+         if (_iUserBussiness.VerifyEmail(email)==true)
+        {
+            return Json($"Email {email} is already in use.");
+        }
+
+        return Json(true);
     }
+
+
 }
+
+//     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+//     public IActionResult Error()
+//     {
+//         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+//     }
+

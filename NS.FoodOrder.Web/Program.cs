@@ -1,5 +1,10 @@
+using Microsoft.EntityFrameworkCore;
 using NS.FoodOrder.Business;
+using NS.FoodOrder.Data.Entities;
+using NS.FoodOrder.Data.CustomEntities;
+using  Microsoft.Extensions.Configuration;
 using NS.FoodOrder.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,6 +16,9 @@ builder.Services.AddScoped<IUserRepository,UserRepository>();
 builder.Services.AddControllersWithViews()
     .AddViewLocalization(Microsoft.AspNetCore.Mvc.Razor.LanguageViewLocationExpanderFormat.Suffix)
     .AddDataAnnotationsLocalization();
+    
+
+builder.Services.AddDbContext<FoodOrderDBContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("FoodOrderDatabase")));
 
 var app = builder.Build();
 
@@ -31,6 +39,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Login}/{action=Index}/{id?}");
 
 app.Run();

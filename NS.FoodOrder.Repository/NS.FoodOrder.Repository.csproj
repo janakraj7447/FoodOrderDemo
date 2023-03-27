@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\NS.FoodOrder.Models\NS.FoodOrder.Models.csproj" />
     <ProjectReference Include="..\NS.FoodOrder.Data\NS.FoodOrder.Data.csproj" />
   </ItemGroup>
 

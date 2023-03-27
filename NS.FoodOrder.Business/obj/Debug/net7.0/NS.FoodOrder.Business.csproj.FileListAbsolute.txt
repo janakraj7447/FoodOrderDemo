@@ -2,9 +2,7 @@ C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Business\bin\Debug\net7.0\NS.FoodOrder
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Business\bin\Debug\net7.0\NS.FoodOrder.Business.dll
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Business\bin\Debug\net7.0\NS.FoodOrder.Business.pdb
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Business\bin\Debug\net7.0\NS.FoodOrder.Data.dll
-C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Business\bin\Debug\net7.0\NS.FoodOrder.Models.dll
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Business\bin\Debug\net7.0\NS.FoodOrder.Repository.dll
-C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Business\bin\Debug\net7.0\NS.FoodOrder.Models.pdb
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Business\bin\Debug\net7.0\NS.FoodOrder.Repository.pdb
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Business\bin\Debug\net7.0\NS.FoodOrder.Data.pdb
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Business\obj\Debug\net7.0\NS.FoodOrder.Business.csproj.AssemblyReference.cache

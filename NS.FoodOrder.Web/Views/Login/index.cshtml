@@ -1,4 +1,4 @@
-@model NS.FoodOrder.Models.Customer;
+@model NS.FoodOrder.Data.CustomEntities.Customer;
 
 <style>
     body {
@@ -57,6 +57,7 @@
          <label for="UserName" class="col-md-3 control-label">Email</label>
         <div class="col-md-9">
         @Html.TextBoxFor(x => x.Email, "", new { @class = "form-control", placeholder = "Enter your Email" })
+         @Html.ValidationMessageFor(x => x.Email,"",new{@class="text-danger"})
        </div>
        </div>
 <br/>
@@ -64,6 +65,7 @@
          <label for="Password" class="col-md-3 control-label">Password</label>
         <div class="col-md-9">
        @Html.PasswordFor(x => x.Password, new { @class = "form-control", placeholder = "Enter your Password" })
+        @Html.ValidationMessageFor(x => x.Password,"",new{@class="text-danger"})
        </div>
        </div>
 <br/>

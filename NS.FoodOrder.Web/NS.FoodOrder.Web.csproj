@@ -2,12 +2,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NS.FoodOrder.Data\NS.FoodOrder.Data.csproj" />
-    <ProjectReference Include="..\NS.FoodOrder.Models\NS.FoodOrder.Models.csproj" />
     <ProjectReference Include="..\NS.FoodOrder.Repository\NS.FoodOrder.Repository.csproj" />
     <ProjectReference Include="..\NS.FoodOrder.Business\NS.FoodOrder.Business.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
   </ItemGroup>
 

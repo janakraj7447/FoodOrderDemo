@@ -1,5 +1,5 @@
 using NS.FoodOrder.Data.Entities;
-using NS.FoodOrder.Models;
+using NS.FoodOrder.Data.CustomEntities;
 using NS.FoodOrder.Repository;
 namespace NS.FoodOrder.Business
 {
@@ -17,6 +17,10 @@ namespace NS.FoodOrder.Business
            public bool AddUser(Customer customer){
             return _iUserRepository.AddUser(customer);
            }
+
+          public bool VerifyEmail(string email){
+            return _iUserRepository.VerifyEmail(email);
+          }
 
     }
 }

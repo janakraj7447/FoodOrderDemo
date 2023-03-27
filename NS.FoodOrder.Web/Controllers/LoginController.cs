@@ -5,13 +5,12 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 // using Foodorder.Entities;
-using Foodorder.Models;
+using NS.FoodOrder.Data.CustomEntities;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NS.FoodOrder.Business;
-using NS.FoodOrder.Models;
 using NS.FoodOrder.Data;
 
 namespace Foodorder.Controllers
