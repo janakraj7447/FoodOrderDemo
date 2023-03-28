@@ -10,8 +10,8 @@ namespace NS.FoodOrder.Business
            _iUserRepository=iUserRepository; 
       
         }
-         public User LoginPage(Customer customer){
-            return _iUserRepository.LoginPage(customer);
+         public User GetUserDetailsByEmail(string email){
+            return _iUserRepository.GetUserDetailsByEmail(email);
          }
 
            public bool AddUser(Customer customer){

@@ -5,9 +5,11 @@ using NS.FoodOrder.Data;
 using NS.FoodOrder.Business;
 using NS.FoodOrder.Web.Models;
 using NS.FoodOrder.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
 namespace Foodorder.Controllers;
-
+// 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -25,11 +27,17 @@ public class HomeController : Controller
     {
         return View();
     }
+     [Authorize(Roles ="1")]
+    public IActionResult Privacy(){
+    // {
+    //      using(var context=new FoodOrderDBContext()){
+    //        var userList=context.Users.ToList();
+    //         return View(userList);
+    //      }
 
-    public IActionResult Privacy()
-    {
         return View();
     }
+   
     public IActionResult About()
     {
         return View();
@@ -38,6 +46,7 @@ public class HomeController : Controller
     {
         return View();
     }
+    [Authorize(Roles ="2")]
     public IActionResult Contact()
     {
         return View();
@@ -76,7 +85,7 @@ public class HomeController : Controller
     [AcceptVerbs("GET", "POST")]
     public IActionResult VerifyEmail(string email)
     {
-        // if (!_userService.VerifyEmail(email))
+        
          if (_iUserBussiness.VerifyEmail(email)==true)
         {
             return Json($"Email {email} is already in use.");

@@ -9,9 +9,9 @@ namespace NS.FoodOrder.Repository
             _ctx=ctx;
         }
 
-        public User LoginPage(Customer customer)
+        public User GetUserDetailsByEmail(string email)
         {
-            return _ctx.Users.Where(x => x.Email == customer.Email).FirstOrDefault();
+            return _ctx.Users.Where(x => x.Email == email).FirstOrDefault();
         }
 
         public bool AddUser(Customer customer){

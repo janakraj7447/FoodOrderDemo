@@ -4,6 +4,7 @@ using NS.FoodOrder.Data.Entities;
 using NS.FoodOrder.Data.CustomEntities;
 using  Microsoft.Extensions.Configuration;
 using NS.FoodOrder.Repository;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,7 @@ builder.Services.AddControllersWithViews()
     
 
 builder.Services.AddDbContext<FoodOrderDBContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("FoodOrderDatabase")));
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x=>x.LoginPath=new PathString("/Login/Index"));
 
 var app = builder.Build();
 
@@ -34,8 +36,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseCookiePolicy();
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",

@@ -4,7 +4,7 @@ namespace NS.FoodOrder.Repository
 {
     public interface IUserRepository
     {
-         User LoginPage(Customer customer);
+         User GetUserDetailsByEmail(string email);
          bool AddUser(Customer customer);
          bool VerifyEmail(string email);
     }

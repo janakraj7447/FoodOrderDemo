@@ -32,15 +32,20 @@ namespace Foodorder.Controllers
         }
 
       [HttpPost]
-        public IActionResult LoginPage(Customer customer){
+        public IActionResult LoginPage(LoginViewModel loginViewModel){
       
-            var userDetails=_iUserBussiness.LoginPage(customer);
-            if(userDetails!=null && BCrypt.Net.BCrypt.Verify(customer.Password,userDetails.Password)){
+            var userDetails=_iUserBussiness.GetUserDetailsByEmail(loginViewModel.Email);
+            if(userDetails!=null && BCrypt.Net.BCrypt.Verify(loginViewModel.Password,userDetails.Password)){
 
-                var claims=new Claim[]{new Claim(ClaimTypes.Email,userDetails.Email),new Claim(ClaimTypes.Role,userDetails.Password)};
+                var claims=new Claim[]{new Claim(ClaimTypes.Email,userDetails.Email),new Claim(ClaimTypes.Role,userDetails.RoleId.ToString())};
                 var identity=new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
                 HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,new ClaimsPrincipal(identity));
+                if(userDetails.RoleId==1){
                 return RedirectToAction("Privacy","Home");
+                }
+                else{
+                    return RedirectToAction("Contact","Home");
+                }
             }
             else{
                 ViewData["Errormsg"]="Incorrect Email or Password";
@@ -51,6 +56,7 @@ namespace Foodorder.Controllers
     }
 
     public IActionResult Logout(){
+       
         HttpContext.SignOutAsync();
         return RedirectToAction("Index","Login");
     }
