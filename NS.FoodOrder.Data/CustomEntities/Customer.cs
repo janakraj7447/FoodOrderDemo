@@ -31,7 +31,7 @@ public partial class Customer
     public string State { get; set; }
     [Required]
     public string Country { get; set; }
-    [Required]
+    [RegularExpression(@"^([0-9]{6})$", ErrorMessage = "Please Enter Valid Mobile Number.")]
     public string PinCode { get; set; }
 
     public bool? IsVerified { get; set; }

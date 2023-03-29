@@ -27,17 +27,16 @@ public class HomeController : Controller
     {
         return View();
     }
-     [Authorize(Roles ="1")]
-    public IActionResult Privacy(){
-    // {
-    //      using(var context=new FoodOrderDBContext()){
-    //        var userList=context.Users.ToList();
-    //         return View(userList);
-    //      }
+    [Authorize(Roles = "1")]
+    public IActionResult Privacy(string Sorting_Order, string Search_Data)
+    {
+        ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "Name_Description" : "";
+        // ViewBag.SortingDate = Sorting_Order == "Date_Enroll" ? "Date_Description" : "Date";
+        var UserDetail = _iUserBussiness.GetUserList( ViewBag.SortingName,  ViewBag.SortingDate);
+        return View(UserDetail);
 
-        return View();
     }
-   
+
     public IActionResult About()
     {
         return View();
@@ -46,7 +45,7 @@ public class HomeController : Controller
     {
         return View();
     }
-    [Authorize(Roles ="2")]
+    [Authorize(Roles = "2")]
     public IActionResult Contact()
     {
         return View();
@@ -74,7 +73,21 @@ public class HomeController : Controller
         customer.ProfilePic = fileName;
         _iUserBussiness.AddUser(customer);
         return RedirectToAction(actionName: "Index", controllerName: "Login");
-        // return View();
+
+    }
+    [HttpPost]
+    public IActionResult AddContactDetails(ContactViewModel contactViewModel)
+    {
+        _iUserBussiness.AddContactDetails(contactViewModel);
+        return RedirectToAction(actionName: "Contact", controllerName: "Home");
+    }
+
+    public IActionResult DeleteRecord(int Id)
+    {
+
+        _iUserBussiness.DeleteRecord(Id);
+        return RedirectToAction(actionName: "Privacy", controllerName: "Home");
+
     }
 
     public IActionResult Login()
@@ -85,8 +98,8 @@ public class HomeController : Controller
     [AcceptVerbs("GET", "POST")]
     public IActionResult VerifyEmail(string email)
     {
-        
-         if (_iUserBussiness.VerifyEmail(email)==true)
+
+        if (_iUserBussiness.VerifyEmail(email) == true)
         {
             return Json($"Email {email} is already in use.");
         }

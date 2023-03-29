@@ -57,7 +57,7 @@
          <label for="UserName" class="col-md-3 control-label">Email</label>
         <div class="col-md-9">
         @Html.TextBoxFor(x => x.Email, "", new { @class = "form-control", placeholder = "Enter your Email" })
-         @Html.ValidationMessageFor(x => x.Email, "Please enter Email", new { @class = "text-success", style = "display:none" }) 
+         @* @Html.ValidationMessageFor(x => x.Email, "Please enter Email", new { @class = "text-success", style = "display:none" })  *@
          @Html.ValidationMessageFor(x => x.Email,"",new{@class="text-danger"})
        </div>
        </div>
@@ -66,7 +66,7 @@
          <label for="Password" class="col-md-3 control-label">Password</label>
         <div class="col-md-9">
        @Html.PasswordFor(x => x.Password, new { @class = "form-control", placeholder = "Enter your Password" })
-        @Html.ValidationMessageFor(x => x.Password, "Enter your Correct Password", new { @class = "text-success", style = "display:none" }) 
+        @* @Html.ValidationMessageFor(x => x.Password, "Enter your Correct Password", new { @class = "text-success", style = "display:none" })  *@
         @Html.ValidationMessageFor(x => x.Password,"",new{@class="text-danger"})
        </div>
        </div>
@@ -77,3 +77,5 @@
         <a asp-controller="Home" asp-action="Index"><h6 class="text-center pt-2">New User,SignUp here</h6></a>
     }
 </div>
+
+@* <script src="~/js/CreateAccount.js"></script> *@

@@ -21,6 +21,18 @@ namespace NS.FoodOrder.Business
           public bool VerifyEmail(string email){
             return _iUserRepository.VerifyEmail(email);
           }
+          
+         public List<User> GetUserList(string Sorting_Order, string Search_Data)
+         {
+            return _iUserRepository.GetUserList(Sorting_Order,Search_Data);
+         }
 
+         public bool  DeleteRecord(int Id){
+            return _iUserRepository.DeleteRecord(Id);
+         }
+
+         public bool AddContactDetails(ContactViewModel contactViewModel){
+            return _iUserRepository.AddContactDetails(contactViewModel);
+         }
     }
 }

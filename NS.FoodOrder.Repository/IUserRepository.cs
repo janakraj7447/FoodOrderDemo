@@ -7,5 +7,10 @@ namespace NS.FoodOrder.Repository
          User GetUserDetailsByEmail(string email);
          bool AddUser(Customer customer);
          bool VerifyEmail(string email);
+
+        
+         public List<User> GetUserList(string Sorting_Order, string Search_Data);
+         bool DeleteRecord(int Id);
+         bool AddContactDetails(ContactViewModel contactViewModel);
     }
 }

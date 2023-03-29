@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Uploads\\Screenshot (13).png"
     },
     {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\Screenshot (14).png",
+      "PackagePath": "staticwebassets\\Uploads\\Screenshot (14).png"
+    },
+    {
       "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\Screenshot (6).png",
       "PackagePath": "staticwebassets\\Uploads\\Screenshot (6).png"
     },
@@ -31,6 +35,10 @@
     {
       "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\js\\CreateAccount.js",
+      "PackagePath": "staticwebassets\\js\\CreateAccount.js"
     },
     {
       "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\js\\site.js",

@@ -1,35 +1,34 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
+﻿@model IEnumerable<NS.FoodOrder.Data.Entities.User>
+
+@{
     Layout="_Layout2";
 }
-<h1>@ViewData["Title"]</h1>
-
-<p>Use this page to detail your site's privacy policy.</p>
-
-@* 
-@model IEnumerable<NS.FoodOrder.Data.Entities.User>
-@{
-    }
 <style>
     table {
         border-collapse: collapse;
         width: 100%;
     }
-    th, td {
+
+    th,
+    td {
         padding: 8px;
         text-align: left;
     }
+
     th {
         background-color: #4CAF50;
         color: white;
     }
+
     tr:nth-child(even) {
         background-color: #F2F2F2;
     }
+
     a {
-        color: #4CAF50;
+        color: white;
         text-decoration: none;
     }
+
     a:hover {
         color: #4CAF50;
         text-decoration: underline;
@@ -37,51 +36,72 @@
 </style>
 <div>
     <h2>User Details</h2>
+    @using (Html.BeginForm())
+{
+    <p>
+        Search Name: @Html.TextBox("Search_Data", ViewBag.FilterValue as string)
+        <input type="submit" value="Find" />
+    </p>
+}
 </div>
 <table>
     <thead>
         <tr>
-            <th>FirstName</th>
+            <th> @Html.ActionLink("FirstName", "Privacy", new {Sorting_Order = ViewBag.SortingName })  </th>
             <th>Last Name</th>
-            <th>Age</th>
+            <th>Profile Pic</th>
+            <th> @Html.ActionLink("Age", "Privacy", new { Sorting_Order = ViewBag.SortingName })  </th>
             <th>Email</th>
             <th>PhoneNumber</th>
             <th>City</th>
             <th>Country</th>
             <th>Address</th>
+            <th>Created At</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(var prod in Model)
+        @foreach (var prod in Model)
         {
             <tr>
                 <td>
-                   @prod.FirstName
+                    @prod.FirstName
+                   
                 </td>
                 <td>
-                   @prod.LastName
+                    @prod.LastName
                 </td>
                 <td>
-                   @prod.Age
+                    <img src="~/Uploads/@prod.ProfilePic" height=20% width=20% alt="NO IMAGE FOUND" srcset="">
                 </td>
                 <td>
-                   @prod.Email
+                    @prod.Age
+                     
                 </td>
                 <td>
-                   @prod.PhoneNo
+                    @prod.Email
                 </td>
                 <td>
-                   @prod.City
+                    @prod.PhoneNo
                 </td>
                 <td>
-                   @prod.Country
+                    @prod.City
+                </td>
+                <td>
+                    @prod.Country
                 </td>
                 <td>
                     @prod.Address
                 </td>
-               
-               
+                <td>
+                    @prod.CreatedDate
+                </td>
+                <td>
+                      @Html.ActionLink("Delete","DeleteRecord",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to delete this record')"})
+                 </td>
+
+
             </tr>
         }
     </tbody>
-</table> *@
+</table>

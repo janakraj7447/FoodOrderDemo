@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6qRE7ActOjoVnaWnOyLL4EhqITSYmGw2+ZOEeB/0w+I=",
+  "Hash": "VoFhrmY7xuCdgigooFPLFwXA9xllvqKY5tjbFDdN2nE=",
   "Source": "NS.FoodOrder.Web",
   "BasePath": "_content/NS.FoodOrder.Web",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\js\\CreateAccount.js",
+      "SourceId": "NS.FoodOrder.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\",
+      "BasePath": "_content/NS.FoodOrder.Web",
+      "RelativePath": "js/CreateAccount.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\CreateAccount.js"
     },
     {
       "Identity": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\js\\site.js",
@@ -1086,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Screenshot (13).png"
+    },
+    {
+      "Identity": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\Screenshot (14).png",
+      "SourceId": "NS.FoodOrder.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\",
+      "BasePath": "_content/NS.FoodOrder.Web",
+      "RelativePath": "Uploads/Screenshot (14).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Screenshot (14).png"
     },
     {
       "Identity": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\Screenshot (6).png",

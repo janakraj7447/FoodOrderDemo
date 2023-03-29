@@ -73,8 +73,6 @@ public partial class FoodOrderDBContext : DbContext
 
         modelBuilder.Entity<ContactU>(entity =>
         {
-            entity.HasNoKey();
-
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
             entity.Property(e => e.Description)
                 .IsRequired()
