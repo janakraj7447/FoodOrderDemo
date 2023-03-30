@@ -1,0 +1,73 @@
+@model IEnumerable<NS.FoodOrder.Data.Entities.Category>
+@{
+    Layout="_Layout";
+}
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F2F2F2;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #4CAF50;
+        text-decoration: underline;
+    }
+</style>
+
+<div>
+    <h2>Categories</h2>
+
+</div>
+<table>
+    <thead>
+        <tr>
+         <th>Category</th>
+         <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prod in Model)
+        {
+            <tr>
+                <td>
+                    @prod.Name   
+                </td>
+
+                <td>
+                   @if(prod.IsActive){
+                         @Html.ActionLink("DeActivate","ActivateDeactivateCategory",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to Deactivate this category')"})
+                    }
+                    else{
+                          @Html.ActionLink("Activate","ActivateDeactivateCategory",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to Activate this category')"})
+                    }
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="text-center m-3">
+ <button class="btn btn-info" > <a asp-controller="Home" asp-action="Category" style="text-decoration:none;color:white;">Add New Category</a> </button>
+</div>

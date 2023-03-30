@@ -12,7 +12,7 @@ namespace NS.FoodOrder.Repository
 
         public User GetUserDetailsByEmail(string email)
         {
-            return _ctx.Users.Where(x => x.Email == email).FirstOrDefault();
+            return _ctx.Users.FirstOrDefault(x => x.Email == email);
         }
 
         public bool AddUser(Customer customer)
@@ -53,38 +53,44 @@ namespace NS.FoodOrder.Repository
         public List<User> GetUserList(string Sorting_Order, string Search_Data)
         {
 
+
+            var userAccount = from stu in _ctx.Users.Where(x=>x.RoleId==2) select stu;
            
-            var students = from stu in _ctx.Users select stu;
             //if search box does not empty then this will run
             if (!string.IsNullOrEmpty(Search_Data))
             {
-                students = students.Where(stu => stu.FirstName.Contains(Search_Data));
+                userAccount = userAccount.Where(stu => stu.FirstName.Contains(Search_Data));
             }
             switch (Sorting_Order)
             {
                 case "Name_Description":
-                    students = students.OrderByDescending(stu => stu.FirstName);
+                    userAccount = userAccount.OrderByDescending(stu => stu.FirstName);
                     break;
                 case "Date_Enroll":
-                    students = students.OrderBy(stu => stu.Age);
+                    userAccount = userAccount.OrderBy(stu => stu.Age);
                     break;
                 case "Date_Description":
-                    students = students.OrderByDescending(stu => stu.Age);
+                    userAccount = userAccount.OrderByDescending(stu => stu.Age);
                     break;
                 default:
-                    students = students.OrderBy(stu => stu.FirstName);
+                    userAccount = userAccount.OrderBy(stu => stu.FirstName);
                     break;
             }
-            return _ctx.Users.ToList();
+            // return _ctx.Users.ToList();
+            return userAccount.ToList();
 
         }
 
-        public bool DeleteRecord(int Id)
+          public  List<Category> GetCategoryList(){
+            return _ctx.Categories.ToList();
+         }
+
+        public bool ActivateDeactivateRecord(int Id)
         {
             var candidateRecord = _ctx.Users.FirstOrDefault(x => x.Id == Id);
             if (candidateRecord != null)
             {
-                _ctx.Users.Remove(candidateRecord);
+                candidateRecord.IsActive = !candidateRecord.IsActive;
                 _ctx.SaveChanges();
 
             }
@@ -108,6 +114,31 @@ namespace NS.FoodOrder.Repository
 
             return true;
         }
+
+        public bool AddCategory(CategoryViewModel categoryViewModel){
+            Category category=new Category();
+            category.Name=categoryViewModel.Name;
+            category.CreatedBy =categoryViewModel.Id;
+            category.CreatedDate = DateTime.Now;
+            _ctx.Add(category);
+            _ctx.SaveChanges();
+            return true;
+         }
+
+          public bool ActivateDeactivateCategory(int Id)
+        {
+            var candidateRecord = _ctx.Users.FirstOrDefault(x => x.Id == Id);
+            if (candidateRecord != null)
+            {
+                candidateRecord.IsActive = !candidateRecord.IsActive;
+                _ctx.SaveChanges();
+
+            }
+            return true;
+
+        }
+
+       
 
 
     }

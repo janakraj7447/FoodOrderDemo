@@ -253,6 +253,14 @@
             "Microsoft.EntityFrameworkCore.Design": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "PagedList.Mvc": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "System.Linq.Dynamic": {
+              "target": "Package",
+              "version": "[1.0.8, )"
             }
           },
           "imports": [

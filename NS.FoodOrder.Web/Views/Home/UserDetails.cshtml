@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<NS.FoodOrder.Data.Entities.User>
 
 @{
-    Layout="_Layout2";
+    Layout="_Layout";
 }
 <style>
     table {
@@ -35,7 +35,7 @@
     }
 </style>
 <div>
-    <h2>User Details</h2>
+    <h2>Users</h2>
     @using (Html.BeginForm())
 {
     <p>
@@ -47,17 +47,17 @@
 <table>
     <thead>
         <tr>
-            <th> @Html.ActionLink("FirstName", "Privacy", new {Sorting_Order = ViewBag.SortingName })  </th>
+            <th> @Html.ActionLink("FirstName", "UserDetails", new {Sorting_Order = ViewBag.SortingName })  </th>
             <th>Last Name</th>
             <th>Profile Pic</th>
-            <th> @Html.ActionLink("Age", "Privacy", new { Sorting_Order = ViewBag.SortingName })  </th>
+            <th> @Html.ActionLink("Age", "UserDetails", new { Sorting_Order = ViewBag.SortingName })  </th>
             <th>Email</th>
             <th>PhoneNumber</th>
             <th>City</th>
             <th>Country</th>
             <th>Address</th>
-            <th>Created At</th>
-            <th>Actions</th>
+            <th>Action</th>
+           
         </tr>
     </thead>
     <tbody>
@@ -94,11 +94,15 @@
                     @prod.Address
                 </td>
                 <td>
-                    @prod.CreatedDate
-                </td>
-                <td>
-                      @Html.ActionLink("Delete","DeleteRecord",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to delete this record')"})
+                    @if(prod.IsActive){
+                         @Html.ActionLink("DeActivate","ActivateDeactivateRecord",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to Deactivate this record')"})
+                    }
+                    else{
+                          @Html.ActionLink("Activate","ActivateDeactivateRecord",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to Activate this record')"})
+                    }
+                   
                  </td>
+
 
 
             </tr>

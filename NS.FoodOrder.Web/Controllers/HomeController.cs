@@ -7,11 +7,14 @@ using NS.FoodOrder.Web.Models;
 using NS.FoodOrder.Data.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using PagedList;
 
 namespace Foodorder.Controllers;
 // 
 public class HomeController : Controller
 {
+
     private readonly ILogger<HomeController> _logger;
     public readonly IUserBussiness _iUserBussiness;
 
@@ -21,6 +24,7 @@ public class HomeController : Controller
         _logger = logger;
         Environment = _environment;
         _iUserBussiness = iUserBussiness;
+
     }
 
     public IActionResult Index()
@@ -28,23 +32,40 @@ public class HomeController : Controller
         return View();
     }
     [Authorize(Roles = "1")]
-    public IActionResult Privacy(string Sorting_Order, string Search_Data)
+    public IActionResult UserDetails(string Sorting_Order, string Search_Data)
     {
+
         ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "Name_Description" : "";
-        // ViewBag.SortingDate = Sorting_Order == "Date_Enroll" ? "Date_Description" : "Date";
-        var UserDetail = _iUserBussiness.GetUserList( ViewBag.SortingName,  ViewBag.SortingDate);
+        ViewBag.SortingDate = Sorting_Order == "Date_Enroll" ? "Date_Description" : "Date";
+        // var UserDetail = _iUserBussiness.GetUserList( ViewBag.SortingName,ViewBag.SortingDate);
+
+        var UserDetail = _iUserBussiness.GetUserList(ViewBag.SortingName, Search_Data);
         return View(UserDetail);
 
     }
 
+    public IActionResult Category()
+    {
+        return View();
+    }
+
+    public IActionResult CategoryDetails()
+    {
+        var UserDetail = _iUserBussiness.GetCategoryList();
+        return View(UserDetail);
+       
+    }
     public IActionResult About()
     {
         return View();
     }
+
     public IActionResult Menu()
     {
         return View();
     }
+
+
     [Authorize(Roles = "2")]
     public IActionResult Contact()
     {
@@ -82,11 +103,25 @@ public class HomeController : Controller
         return RedirectToAction(actionName: "Contact", controllerName: "Home");
     }
 
-    public IActionResult DeleteRecord(int Id)
+    [HttpPost]
+    public IActionResult AddCategory(CategoryViewModel categoryViewModel)
+    {
+        _iUserBussiness.AddCategory(categoryViewModel);
+        return RedirectToAction(actionName: "Category", controllerName: "Home");
+    }
+
+    public IActionResult ActivateDeactivateRecord(int Id)
     {
 
-        _iUserBussiness.DeleteRecord(Id);
-        return RedirectToAction(actionName: "Privacy", controllerName: "Home");
+        _iUserBussiness.ActivateDeactivateRecord(Id);
+        return RedirectToAction(actionName: "UserDetails", controllerName: "Home");
+    }
+
+    public IActionResult ActivateDeactivateCategory(int Id)
+    {
+
+        _iUserBussiness.ActivateDeactivateCategory(Id);
+        return RedirectToAction(actionName: "CategoryDetails", controllerName: "Home");
 
     }
 

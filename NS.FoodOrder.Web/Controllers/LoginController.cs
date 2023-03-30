@@ -16,11 +16,11 @@ using NS.FoodOrder.Data;
 namespace Foodorder.Controllers
 {
   
-    public class Login : Controller
+    public class LoginController : Controller
     {
-        private readonly ILogger<Login> _logger;
+        private readonly ILogger<LoginController> _logger;
         public readonly IUserBussiness _iUserBussiness;
-        public Login(ILogger<Login> logger,IUserBussiness iUserBussiness)
+        public LoginController(ILogger<LoginController> logger,IUserBussiness iUserBussiness)
         {
             _logger = logger;
             _iUserBussiness=iUserBussiness;
@@ -32,20 +32,24 @@ namespace Foodorder.Controllers
         }
 
       [HttpPost]
-        public IActionResult LoginPage(LoginViewModel loginViewModel){
+        public IActionResult Login(LoginViewModel loginViewModel){
       
             var userDetails=_iUserBussiness.GetUserDetailsByEmail(loginViewModel.Email);
-            if(userDetails!=null && BCrypt.Net.BCrypt.Verify(loginViewModel.Password,userDetails.Password)){
+            if(userDetails!=null && userDetails.IsActive && BCrypt.Net.BCrypt.Verify(loginViewModel.Password,userDetails.Password)){
 
                 var claims=new Claim[]{new Claim(ClaimTypes.Email,userDetails.Email),new Claim(ClaimTypes.Role,userDetails.RoleId.ToString())};
                 var identity=new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
                 HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,new ClaimsPrincipal(identity));
                 if(userDetails.RoleId==1){
-                return RedirectToAction("Privacy","Home");
+                return RedirectToAction("UserDetails","Home");
                 }
                 else{
                     return RedirectToAction("Contact","Home");
                 }
+            }
+            else if(userDetails!=null && !userDetails.IsActive){
+                 ViewData["Errormsg"]="In-Active User";
+                return View("Index");
             }
             else{
                 ViewData["Errormsg"]="Incorrect Email or Password";

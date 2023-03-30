@@ -10,8 +10,13 @@ namespace NS.FoodOrder.Business
 
             
           List<User> GetUserList(string Sorting_Order, string Search_Data);
-          bool DeleteRecord(int Id);
+          bool ActivateDeactivateRecord(int Id);
+          bool ActivateDeactivateCategory(int Id);
 
          bool AddContactDetails(ContactViewModel contactViewModel);
+
+         bool AddCategory(CategoryViewModel categoryViewModel);
+
+         List<Category> GetCategoryList();
     }
 }

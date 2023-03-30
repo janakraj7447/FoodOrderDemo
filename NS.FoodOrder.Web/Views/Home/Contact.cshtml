@@ -1,6 +1,6 @@
 @model NS.FoodOrder.Data.CustomEntities.ContactViewModel
 @{
-    Layout="_Layout2";
+    Layout="_Layout3";
 }
 <!DOCTYPE html>
 <html>
@@ -8,6 +8,83 @@
 <head>
   
   <title> Contact </title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #F2F2F2;
+  color: #333;
+}
+/* Styles for section heading */
+.h1-responsive {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+/* Styles for section description */
+.w-responsive {
+  margin: 0 auto 2rem auto;
+  max-width: 50rem;
+}
+/* Styles for form */
+form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+/* Styles for form inputs */
+input[type="text"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+/* Styles for form button */
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button[type="submit"]:hover {
+  background-color: #4CAF99;
+}
+/* Styles for contact info */
+ul {
+  list-style: none;
+  padding: 0;
+}
+.fa-map-marker-alt,
+.fa-phone,
+.fa-envelope {
+  color: #007BFF;
+  margin-right: 0.5rem;
+}
+.text-center {
+  text-align: center;
+}
+.text-md-left {
+  text-align: left;
+}
+  </style>
+
 
 </head>
 

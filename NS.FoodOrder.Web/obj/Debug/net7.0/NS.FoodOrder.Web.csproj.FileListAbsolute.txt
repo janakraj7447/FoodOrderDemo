@@ -91,3 +91,6 @@ C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Web\bin\Debug\net7.0\Microsoft.CodeAna
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Web\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Web\obj\Debug\net7.0\NS.FoodOrder.Web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Web\bin\Debug\net7.0\System.Linq.Dynamic.dll
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Web\bin\Debug\net7.0\PagedList.dll
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Web\bin\Debug\net7.0\PagedList.Mvc.dll

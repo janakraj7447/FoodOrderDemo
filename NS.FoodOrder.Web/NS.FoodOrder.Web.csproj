@@ -9,6 +9,8 @@
   <ItemGroup>
      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
+    <PackageReference Include="System.Linq.Dynamic" Version="1.0.8" />
   </ItemGroup>
 
   <PropertyGroup>
