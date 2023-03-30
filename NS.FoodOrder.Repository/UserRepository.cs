@@ -127,7 +127,7 @@ namespace NS.FoodOrder.Repository
 
           public bool ActivateDeactivateCategory(int Id)
         {
-            var candidateRecord = _ctx.Users.FirstOrDefault(x => x.Id == Id);
+            var candidateRecord = _ctx.Categories.FirstOrDefault(x => x.Id == Id);
             if (candidateRecord != null)
             {
                 candidateRecord.IsActive = !candidateRecord.IsActive;
