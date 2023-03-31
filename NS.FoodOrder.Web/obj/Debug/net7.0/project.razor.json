@@ -18645,6 +18645,11 @@
   "RootNamespace": "NS.FoodOrder.Web",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Shared\\_LayoutAbout.cshtml",
+      "TargetPath": "Views\\Shared\\_LayoutAbout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
