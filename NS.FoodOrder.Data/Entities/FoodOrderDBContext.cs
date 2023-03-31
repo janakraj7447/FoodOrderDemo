@@ -33,7 +33,7 @@ public partial class FoodOrderDBContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-
+ 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Cart>(entity =>
@@ -155,7 +155,6 @@ public partial class FoodOrderDBContext : DbContext
 
             entity.ToTable("Product");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
             entity.Property(e => e.Description)
                 .IsRequired()

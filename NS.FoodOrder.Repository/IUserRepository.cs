@@ -13,7 +13,17 @@ namespace NS.FoodOrder.Repository
 
         bool AddContactDetails(ContactViewModel contactViewModel);
 
-        bool AddCategory(CategoryViewModel categoryViewModel);
+        bool AddEditCategory(Category category);
         List<Category> GetCategoryList();
+
+        AddEditCategoryViewModel GetCategoryById(int id);
+
+        bool AddEditProduct(Product product);
+        bool ActivateDeactivateEligible(int Id);
+         bool ActivateDeactivateProduct(int Id);
+
+        List<Product> GetProductList();
+
+        AddEditProductViewModel GetProductById(int id);
     }
 }

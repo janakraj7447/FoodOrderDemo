@@ -19,7 +19,7 @@ public partial class Product
 
     public string Photo { get; set; }
 
-    public bool? IsActive { get; set; }
+    public bool IsActive { get; set; }
 
     public bool IsDeleted { get; set; }
 

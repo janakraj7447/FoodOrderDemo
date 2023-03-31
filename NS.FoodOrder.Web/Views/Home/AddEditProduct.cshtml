@@ -1,0 +1,68 @@
+@model NS.FoodOrder.Data.CustomEntities.AddEditProductViewModel
+@{
+    Layout="_Layout";
+}
+<h2 class="text-center">Add Product</h2>
+@using (Html.BeginForm("AddEditProduct", "Home", FormMethod.Post, new {id="formRegistration",enctype="multipart/form-data"}))
+{
+<div class="form-group">
+   <label for="Name" class="col-md-3 control-label">Name</label>
+    <div class="col-md-9">
+      @Html.HiddenFor(x=>x.Id)
+      @Html.TextBoxFor(x =>x.Name, "", new { @class = "form-control", placeholder = "Enter the name of the product" })
+      @Html.ValidationMessageFor(x => x.Name,"",new{@class="text-danger"})
+   </div>
+</div>
+<br/>
+
+
+<div class="form-group">
+   <label for="Name" class="col-md-3 control-label">Category Id</label>
+    <div class="col-md-9">
+      @* @Html.TextBoxFor(x =>x.CategoryId, "", new { @class = "form-control", placeholder = "Enter the name of the product" })
+      @Html.ValidationMessageFor(x => x.CategoryId,"",new{@class="text-danger"}) *@
+      @Html.DropDownListFor(x=>x.CategoryId,ViewBag.Categories as SelectList)
+   </div>
+</div>
+<br/>
+
+<div class="form-group">
+   <label for="Price" class="col-md-3 control-label">Price</label>
+    <div class="col-md-9">
+      @Html.TextBoxFor(x =>x.Price, "", new { @class = "form-control", placeholder = "Enter the price of the product" })
+      @Html.ValidationMessageFor(x => x.Price,"",new{@class="text-danger"})
+   </div>
+</div>
+<br/>
+
+@if(String.IsNullOrEmpty(Model.Photo)){
+<div class="form-group">
+   <label for="lastname" class="col-md-3 control-label">Photo</label>
+    <div class="col-md-9">
+    <input type="file" name="Photo"/>
+    @Html.ValidationMessageFor(x => x.Photo,"",new{@class="text-danger"})
+    </div>
+</div>
+}
+else{
+      @Html.HiddenFor(x=>x.Photo)
+    <img src="~/UploadProduct/@Model.Photo" height=20% width=20% alt="NO IMAGE FOUND" srcset="">  
+}
+<br/>
+
+
+<div class="form-group">
+   <label for="Description" class="col-md-3 control-label">Description</label>
+    <div class="col-md-9">
+      @Html.TextBoxFor(x =>x.Description, "", new { @class = "form-control", placeholder = "Enter the Description of the product" })
+      @Html.ValidationMessageFor(x => x.Description,"",new{@class="text-danger"})
+   </div>
+</div>
+<br/>
+
+
+<div class="col-md-offset-3 col-md-9">
+   <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Submit</button>
+   <span style="margin-left:8px;"></span>
+</div>
+}

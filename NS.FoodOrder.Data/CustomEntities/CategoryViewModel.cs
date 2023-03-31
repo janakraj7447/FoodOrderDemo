@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-
+using System.ComponentModel.DataAnnotations;
 namespace NS.FoodOrder.Data.CustomEntities{
 
-public partial class CategoryViewModel
+public class CategoryViewModel
 {
     public long Id { get; set; }
 

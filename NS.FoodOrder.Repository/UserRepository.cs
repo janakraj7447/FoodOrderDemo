@@ -54,8 +54,8 @@ namespace NS.FoodOrder.Repository
         {
 
 
-            var userAccount = from stu in _ctx.Users.Where(x=>x.RoleId==2) select stu;
-           
+            var userAccount = from stu in _ctx.Users.Where(x => x.RoleId == 2) select stu;
+
             //if search box does not empty then this will run
             if (!string.IsNullOrEmpty(Search_Data))
             {
@@ -81,9 +81,21 @@ namespace NS.FoodOrder.Repository
 
         }
 
-          public  List<Category> GetCategoryList(){
+        public List<Category> GetCategoryList()
+        {
             return _ctx.Categories.ToList();
-         }
+        }
+
+
+        public AddEditCategoryViewModel GetCategoryById(int id)
+        {
+            var category = _ctx.Categories.FirstOrDefault(x => x.Id == id);
+            return new AddEditCategoryViewModel()
+            {
+                Id = category.Id,
+                Name = category.Name
+            };
+        }
 
         public bool ActivateDeactivateRecord(int Id)
         {
@@ -95,7 +107,6 @@ namespace NS.FoodOrder.Repository
 
             }
             return true;
-
         }
 
         public bool AddContactDetails(ContactViewModel contactViewModel)
@@ -115,22 +126,30 @@ namespace NS.FoodOrder.Repository
             return true;
         }
 
-        public bool AddCategory(CategoryViewModel categoryViewModel){
-            Category category=new Category();
-            category.Name=categoryViewModel.Name;
-            category.CreatedBy =categoryViewModel.Id;
-            category.CreatedDate = DateTime.Now;
-            _ctx.Add(category);
-            _ctx.SaveChanges();
-            return true;
-         }
-
-          public bool ActivateDeactivateCategory(int Id)
+        public bool AddEditCategory(Category category)
         {
-            var candidateRecord = _ctx.Categories.FirstOrDefault(x => x.Id == Id);
-            if (candidateRecord != null)
+            if (category.Id > 0)
             {
-                candidateRecord.IsActive = !candidateRecord.IsActive;
+                var cat = _ctx.Categories.FirstOrDefault(x => x.Id == category.Id);
+                cat.Name = category.Name;
+                cat.UpdatedBy = category.CreatedBy;
+                cat.UpdatedDate = DateTime.UtcNow;
+                return _ctx.SaveChanges() > 0;
+
+            }
+            else
+            {
+                _ctx.Add(category);
+                return _ctx.SaveChanges() > 0;
+            }
+        }
+
+        public bool ActivateDeactivateCategory(int Id)
+        {
+            var categoryRecord = _ctx.Categories.FirstOrDefault(x => x.Id == Id);
+            if (categoryRecord != null)
+            {
+                categoryRecord.IsActive = !categoryRecord.IsActive;
                 _ctx.SaveChanges();
 
             }
@@ -138,8 +157,71 @@ namespace NS.FoodOrder.Repository
 
         }
 
-       
+        public bool AddEditProduct(Product product)
+        {
+            if (product.Id > 0)
+            {
+                var prod = _ctx.Products.FirstOrDefault(x => x.Id == product.Id);
+                prod.Name = product.Name;
+                prod.Price=product.Price;
+                prod.CategoryId=product.CategoryId;
+                prod.Description=product.Description;
+                prod.UpdatedBy = product.CreatedBy;
+                prod.Updateddate = DateTime.UtcNow;
+                return _ctx.SaveChanges() > 0;
 
+            }
+            else
+            {
+                _ctx.Add(product);
+                return _ctx.SaveChanges() > 0;
+            }
+        }
+
+        public List<Product> GetProductList()
+        {
+            return _ctx.Products.ToList();
+        }
+
+
+         public AddEditProductViewModel GetProductById(int id)
+        {
+            var product = _ctx.Products.FirstOrDefault(x => x.Id == id);
+            return new AddEditProductViewModel()
+            {
+                Id = product.Id,
+                Name = product.Name,
+                CategoryId=product.CategoryId,
+                Price=product.Price,
+                Description=product.Description,
+                Photo=product.Photo
+            };
+        }
+
+         public bool ActivateDeactivateEligible(int Id)
+        {
+            var product = _ctx.Products.FirstOrDefault(x => x.Id == Id);
+            if (product != null)
+            {
+                product.IsEligibleForDiscount = !product.IsEligibleForDiscount;
+                _ctx.SaveChanges();
+
+            }
+            return true;
+
+        }
+         public bool ActivateDeactivateProduct(int Id)
+        {
+            var product = _ctx.Products.FirstOrDefault(x => x.Id == Id);
+            if (product != null)
+            {
+                product.IsActive = !product.IsActive;
+                _ctx.SaveChanges();
+
+            }
+            return true;
+
+        }
 
     }
 }

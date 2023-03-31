@@ -25,7 +25,7 @@
     }
 
     a {
-        color: white;
+        color: black;
         text-decoration: none;
     }
 
@@ -35,10 +35,20 @@
     }
 </style>
 
-<div>
-    <h2>Categories</h2>
-
+<div class="col-md-12">
+    <div class="row">
+    <div class="col-md-6">
+       <h2>Categories</h2>
+    </div>
+   
+   <div class="col-md-6">
+    <div class="text-center float-end">
+      <button class="btn btn-info" > <a asp-controller="Home" asp-action="AddEditCategory" style="text-decoration:none;color:white;">Add Category</a> </button>
+    </div>
+    </div>
 </div>
+</div>
+
 <table>
     <thead>
         <tr>
@@ -51,7 +61,8 @@
         {
             <tr>
                 <td>
-                    @prod.Name   
+                      @Html.ActionLink(prod.Name ,"AddEditCategory",new{prod.Id},new{@class="fw-bold"})
+                    
                 </td>
 
                 <td>
@@ -68,6 +79,3 @@
     </tbody>
 </table>
 
-<div class="text-center m-3">
- <button class="btn btn-info" > <a asp-controller="Home" asp-action="Category" style="text-decoration:none;color:white;">Add New Category</a> </button>
-</div>

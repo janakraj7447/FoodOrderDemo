@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using PagedList;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Foodorder.Controllers;
 // 
@@ -44,16 +45,11 @@ public class HomeController : Controller
 
     }
 
-    public IActionResult Category()
-    {
-        return View();
-    }
-
-    public IActionResult CategoryDetails()
+    public IActionResult Categories()
     {
         var UserDetail = _iUserBussiness.GetCategoryList();
         return View(UserDetail);
-       
+
     }
     public IActionResult About()
     {
@@ -70,6 +66,59 @@ public class HomeController : Controller
     public IActionResult Contact()
     {
         return View();
+    }
+
+    public IActionResult Products()
+    {
+        var UserDetail = _iUserBussiness.GetProductList();
+        return View(UserDetail);
+    }
+
+    [HttpGet]
+    public IActionResult AddEditProduct(int id)
+    {
+        ViewBag.Categories = new SelectList(_iUserBussiness.GetCategoryList(), "Id", "Name");
+        if (id > 0)
+            return View(_iUserBussiness.GetProductById(id));
+        else
+            return View(new AddEditProductViewModel());
+    }
+
+    [HttpPost]
+    public IActionResult AddEditProduct(AddEditProductViewModel addEditProductViewModel, IFormFile Photo)
+    {
+        string wwwPath = this.Environment.WebRootPath;
+        string contentPath = this.Environment.ContentRootPath;
+        string path = Path.Combine(this.Environment.WebRootPath, "UploadProduct");
+        if (!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+        if (addEditProductViewModel.Id == 0)
+        {
+            List<string> uploadedFiles = new List<string>();
+            string fileName = Path.GetFileName(Photo.FileName);
+            using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
+            {
+                Photo.CopyTo(stream);
+                uploadedFiles.Add(fileName);
+                ViewBag.Message += string.Format("<b>{0}</b> Profile pic uploaded.<br />", fileName);
+            }
+
+            addEditProductViewModel.Photo = fileName;
+        }
+
+
+        addEditProductViewModel.CreatedBy = Convert.ToInt64(User.Claims.FirstOrDefault(c => c.Type == "UserId").Value);
+        _iUserBussiness.AddEditProduct(addEditProductViewModel);
+        return RedirectToAction(nameof(Products));
+    }
+    public IActionResult ActivateDeactivateProduct(int Id)
+    {
+
+        _iUserBussiness.ActivateDeactivateProduct(Id);
+        return RedirectToAction(actionName: "Products", controllerName: "Home");
+
     }
 
     [HttpPost]
@@ -103,11 +152,21 @@ public class HomeController : Controller
         return RedirectToAction(actionName: "Contact", controllerName: "Home");
     }
 
-    [HttpPost]
-    public IActionResult AddCategory(CategoryViewModel categoryViewModel)
+    [HttpGet]
+    public IActionResult AddEditCategory(int id)
     {
-        _iUserBussiness.AddCategory(categoryViewModel);
-        return RedirectToAction(actionName: "Category", controllerName: "Home");
+        if (id > 0)
+            return View(_iUserBussiness.GetCategoryById(id));
+        else
+            return View();
+    }
+
+    [HttpPost]
+    public IActionResult AddEditCategory(AddEditCategoryViewModel addEditCategoryViewModel)
+    {
+        addEditCategoryViewModel.CreatedBy = Convert.ToInt64(User.Claims.FirstOrDefault(c => c.Type == "UserId").Value);
+        _iUserBussiness.AddEditCategory(addEditCategoryViewModel);
+        return RedirectToAction(nameof(Categories));
     }
 
     public IActionResult ActivateDeactivateRecord(int Id)
@@ -121,9 +180,18 @@ public class HomeController : Controller
     {
 
         _iUserBussiness.ActivateDeactivateCategory(Id);
-        return RedirectToAction(actionName: "CategoryDetails", controllerName: "Home");
+        return RedirectToAction(actionName: "Categories", controllerName: "Home");
 
     }
+
+    public IActionResult ActivateDeactivateEligible(int Id)
+    {
+
+        _iUserBussiness.ActivateDeactivateEligible(Id);
+        return RedirectToAction(actionName: "Products", controllerName: "Home");
+
+    }
+
 
     public IActionResult Login()
     {
