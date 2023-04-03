@@ -9,21 +9,7 @@ namespace NS.FoodOrder.Repository
         bool VerifyEmail(string email);
         public List<User> GetUserList(string Sorting_Order, string Search_Data);
         bool ActivateDeactivateRecord(int Id);
-        bool ActivateDeactivateCategory(int Id);
-
         bool AddContactDetails(ContactViewModel contactViewModel);
 
-        bool AddEditCategory(Category category);
-        List<Category> GetCategoryList();
-
-        AddEditCategoryViewModel GetCategoryById(int id);
-
-        bool AddEditProduct(Product product);
-        bool ActivateDeactivateEligible(int Id);
-         bool ActivateDeactivateProduct(int Id);
-
-        List<Product> GetProductList();
-
-        AddEditProductViewModel GetProductById(int id);
     }
 }

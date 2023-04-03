@@ -1,5 +1,7 @@
 @model NS.FoodOrder.Data.CustomEntities.LoginViewModel;
-
+@{
+    Layout=null;
+}
 <style>
     body {
         background-color: #F2F2F2;
@@ -74,7 +76,7 @@
         <div>
             <button type="submit">Login</button>
         </div>
-        <a asp-controller="Home" asp-action="Index"><h6 class="text-center pt-2">Do not have an acount? SignUp here</h6></a>
+        <a class="text-center pt-2" asp-controller="Home" asp-action="Index"><h5>Do not have an acount? SignUp here</h5></a>
     }
 </div>
 

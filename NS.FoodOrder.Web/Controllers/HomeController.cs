@@ -18,13 +18,17 @@ public class HomeController : Controller
 
     private readonly ILogger<HomeController> _logger;
     public readonly IUserBussiness _iUserBussiness;
+    public readonly ICategoryBussiness _iCategoryBussiness;
+    public readonly IProductBussiness _iProductBussiness;
 
     private Microsoft.AspNetCore.Hosting.IHostingEnvironment Environment;
-    public HomeController(ILogger<HomeController> logger, Microsoft.AspNetCore.Hosting.IHostingEnvironment _environment, IUserBussiness iUserBussiness)
+    public HomeController(ILogger<HomeController> logger, Microsoft.AspNetCore.Hosting.IHostingEnvironment _environment, IUserBussiness iUserBussiness, ICategoryBussiness iCategoryBussiness,IProductBussiness iProductBussiness)
     {
         _logger = logger;
         Environment = _environment;
         _iUserBussiness = iUserBussiness;
+        _iCategoryBussiness = iCategoryBussiness;
+        _iProductBussiness= iProductBussiness;
 
     }
 
@@ -38,16 +42,7 @@ public class HomeController : Controller
 
         ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "Name_Description" : "";
         ViewBag.SortingDate = Sorting_Order == "Date_Enroll" ? "Date_Description" : "Date";
-        // var UserDetail = _iUserBussiness.GetUserList( ViewBag.SortingName,ViewBag.SortingDate);
-
         var UserDetail = _iUserBussiness.GetUserList(ViewBag.SortingName, Search_Data);
-        return View(UserDetail);
-
-    }
-
-    public IActionResult Categories()
-    {
-        var UserDetail = _iUserBussiness.GetCategoryList();
         return View(UserDetail);
 
     }
@@ -58,67 +53,19 @@ public class HomeController : Controller
 
     public IActionResult Menu()
     {
+        var UserDetail = _iProductBussiness.GetProductList();
+        return View(UserDetail);
+        
+    }
+    public IActionResult Home()
+    {
         return View();
     }
-
 
     [Authorize(Roles = "2")]
     public IActionResult Contact()
     {
         return View();
-    }
-
-    public IActionResult Products()
-    {
-        var UserDetail = _iUserBussiness.GetProductList();
-        return View(UserDetail);
-    }
-
-    [HttpGet]
-    public IActionResult AddEditProduct(int id)
-    {
-        ViewBag.Categories = new SelectList(_iUserBussiness.GetCategoryList(), "Id", "Name");
-        if (id > 0)
-            return View(_iUserBussiness.GetProductById(id));
-        else
-            return View(new AddEditProductViewModel());
-    }
-
-    [HttpPost]
-    public IActionResult AddEditProduct(AddEditProductViewModel addEditProductViewModel, IFormFile Photo)
-    {
-        string wwwPath = this.Environment.WebRootPath;
-        string contentPath = this.Environment.ContentRootPath;
-        string path = Path.Combine(this.Environment.WebRootPath, "UploadProduct");
-        if (!Directory.Exists(path))
-        {
-            Directory.CreateDirectory(path);
-        }
-        if (addEditProductViewModel.Id == 0)
-        {
-            List<string> uploadedFiles = new List<string>();
-            string fileName = Path.GetFileName(Photo.FileName);
-            using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
-            {
-                Photo.CopyTo(stream);
-                uploadedFiles.Add(fileName);
-                ViewBag.Message += string.Format("<b>{0}</b> Profile pic uploaded.<br />", fileName);
-            }
-
-            addEditProductViewModel.Photo = fileName;
-        }
-
-
-        addEditProductViewModel.CreatedBy = Convert.ToInt64(User.Claims.FirstOrDefault(c => c.Type == "UserId").Value);
-        _iUserBussiness.AddEditProduct(addEditProductViewModel);
-        return RedirectToAction(nameof(Products));
-    }
-    public IActionResult ActivateDeactivateProduct(int Id)
-    {
-
-        _iUserBussiness.ActivateDeactivateProduct(Id);
-        return RedirectToAction(actionName: "Products", controllerName: "Home");
-
     }
 
     [HttpPost]
@@ -152,46 +99,12 @@ public class HomeController : Controller
         return RedirectToAction(actionName: "Contact", controllerName: "Home");
     }
 
-    [HttpGet]
-    public IActionResult AddEditCategory(int id)
-    {
-        if (id > 0)
-            return View(_iUserBussiness.GetCategoryById(id));
-        else
-            return View();
-    }
-
-    [HttpPost]
-    public IActionResult AddEditCategory(AddEditCategoryViewModel addEditCategoryViewModel)
-    {
-        addEditCategoryViewModel.CreatedBy = Convert.ToInt64(User.Claims.FirstOrDefault(c => c.Type == "UserId").Value);
-        _iUserBussiness.AddEditCategory(addEditCategoryViewModel);
-        return RedirectToAction(nameof(Categories));
-    }
-
     public IActionResult ActivateDeactivateRecord(int Id)
     {
 
         _iUserBussiness.ActivateDeactivateRecord(Id);
         return RedirectToAction(actionName: "UserDetails", controllerName: "Home");
     }
-
-    public IActionResult ActivateDeactivateCategory(int Id)
-    {
-
-        _iUserBussiness.ActivateDeactivateCategory(Id);
-        return RedirectToAction(actionName: "Categories", controllerName: "Home");
-
-    }
-
-    public IActionResult ActivateDeactivateEligible(int Id)
-    {
-
-        _iUserBussiness.ActivateDeactivateEligible(Id);
-        return RedirectToAction(actionName: "Products", controllerName: "Home");
-
-    }
-
 
     public IActionResult Login()
     {

@@ -1,195 +1,46 @@
 @model NS.FoodOrder.Data.CustomEntities.ContactViewModel
 @{
-    Layout="_Layout2";
+    Layout="_LayoutContact";
 }
-<!DOCTYPE html>
-<html>
 
-<head>
-  
-  <title> Contact </title>
-  <style>
-    body {
-  font-family: Arial, sans-serif;
-  background-color: #F2F2F2;
-  color: #333;
-}
-/* Styles for section heading */
-.h1-responsive {
-  font-size: 3rem;
-  text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-/* Styles for section description */
-.w-responsive {
-  margin: 0 auto 2rem auto;
-  max-width: 50rem;
-}
-/* Styles for form */
-form {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-/* Styles for form inputs */
-input[type="text"],
-textarea {
-  display: block;
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  font-family: inherit;
-}
-label {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-/* Styles for form button */
-button[type="submit"] {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 0.5rem 2rem;
-  border-radius: 5px;
-  border: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-button[type="submit"]:hover {
-  background-color: #4CAF99;
-}
-/* Styles for contact info */
-ul {
-  list-style: none;
-  padding: 0;
-}
-.fa-map-marker-alt,
-.fa-phone,
-.fa-envelope {
-  color: #007BFF;
-  margin-right: 0.5rem;
-}
-.text-center {
-  text-align: center;
-}
-.text-md-left {
-  text-align: left;
-}
-  </style>
-
-
-</head>
-
-<body class="sub_page">
-
-
-
-    <!--Section heading-->
-    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-    <!--Section description-->
-    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-        a matter of hours to help you.</p>
-
-    <div class="row">
-
-        <!--Grid column-->
-        <div class="col-md-9 mb-md-0 mb-5">
-            @using (Html.BeginForm("AddContactDetails", "Home", FormMethod.Post, new {id="formRegistration"}))
-{
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                           <label for="name" class="">Your name</label>
-                            @Html.TextBoxFor(x =>x.Name, "", new { @class = "form-control", placeholder = "Enter your Last name here" })
-                           
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                          <label for="email" class="">Your email</label>
-                          @Html.TextBoxFor(x =>x.Email, "", new { @class = "form-control", placeholder = "Enter your Last name here" })
-                            
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="md-form mb-0">
-                          <label for="subject" class="">Subject</label>
-                            @Html.TextBoxFor(x =>x.Subject, "", new { @class = "form-control", placeholder = "Enter your Last name here" })
-                            
-                        </div>
-                    </div>
-                </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-12">
-
-                        <div class="md-form">
-                          <label for="message">Your message</label>
-                           @Html.TextBoxFor(x =>x.Description, "", new { @class = "form-control", placeholder = "Enter your Last name here" })
-                            
-                        </div>
-
-                    </div>
-                </div>
-                <!--Grid row-->
-
-
-            <div class="text-center text-md-left">
-              <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Submit</button>
-            </div>
-            <div class="status"></div>
-        
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-md-3 text-center">
-            <ul class="list-unstyled mb-0">
-                <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                    <p>Chandigarh,India</p>
-                </li>
-
-                <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                    <p>+ 01 234 567 89</p>
-                </li>
-
-                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                    <p>Janakgoyal@gmail.com</p>
-                </li>
-            </ul>
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+        Contact us
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+             @using (Html.BeginForm("AddContactDetails", "Home", FormMethod.Post, new {id="formRegistration"})){
+              <div>
+                 @Html.TextBoxFor(x =>x.Name, "", new { @class = "form-control", placeholder = "Enter your name here" })
+              </div>
+              <div>
+                   @Html.TextBoxFor(x =>x.Email, "", new { @class = "form-control", placeholder = "Enter your email here" })
+              </div>
+              <div>
+                  @Html.TextBoxFor(x =>x.Subject, "", new { @class = "form-control", placeholder = "Enter subject here" })
+              </div>
+              <div>
+                @Html.TextBoxFor(x =>x.Description, "", new { @class = "form-control", placeholder = "Enter Description here" })
+              </div>
+              <div class="btn_box">
+                <button>
+                  Submit
+                </button>
+              </div>
+             }
+          </div>
         </div>
-        <!--Grid column-->
-}
+        <div class="col-md-6">
+          <div class="map_container">
+            <div id="googleMap"></div>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-
-
-</body>
-
-</html>
+  </section>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>

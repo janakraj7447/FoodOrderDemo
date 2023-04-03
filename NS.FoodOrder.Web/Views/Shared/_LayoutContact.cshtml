@@ -1,3 +1,4 @@
+@model NS.FoodOrder.Data.CustomEntities.ContactViewModel
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +12,7 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="">
+  <link rel="shortcut icon" href="~/images/favicon.png" type="">
 
   <title> Foods </title>
 
@@ -54,17 +55,17 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item ">
+              <li class="nav-item">
                 <a class="nav-link"  asp-area="" asp-controller="Home" asp-action="Home">Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Menu">Menu</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About </a>
+               <a class="nav-link"asp-area="" asp-controller="Home" asp-action="Menu">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link"  asp-area="" asp-controller="Home" asp-action="Contact">Contact us</a>
+                  <a class="nav-link"  asp-area="" asp-controller="Home" asp-action="About">About us</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact Us <span class="sr-only">(current)</span> </a>
               </li>
             </ul>
             <div class="user_option">
@@ -125,7 +126,6 @@
                   </g>
                 </svg>
               </a>
-              @RenderBody();
               <form class="form-inline">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                   <i class="fa fa-search" aria-hidden="true"></i>
@@ -141,41 +141,9 @@
     <!-- end header section -->
   </div>
 
-  <!-- about section -->
 
-  <section class="about_section layout_padding">
-    <div class="container  ">
-
-      <div class="row">
-        <div class="col-md-6 ">
-          <div class="img-box">
-            <img src="~/images/about-img.png" alt="">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                We Are Foods
-              </h2>
-            </div>
-            <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
-            </p>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end about section -->
-
+  <!-- end book section -->
+@RenderBody();
   <!-- footer section -->
   <footer class="footer_section">
     <div class="container">
@@ -249,7 +217,7 @@
       <div class="footer-info">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By Janak Goyal
-          <a href="#" target="_blank">Janak@gmail.com</a>
+          <a href="https://themewagon.com/" target="_blank">Janakgyl@gmail.com</a>
         </p>
       </div>
     </div>

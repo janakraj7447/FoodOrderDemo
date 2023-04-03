@@ -43,7 +43,7 @@
    
    <div class="col-md-6">
     <div class="text-center float-end">
-      <button class="btn btn-info" > <a asp-controller="Home" asp-action="AddEditCategory" style="text-decoration:none;color:white;">Add Category</a> </button>
+      <button class="btn btn-info" > <a asp-controller="Category" asp-action="AddEditCategory" style="text-decoration:none;color:white;">Add Category</a> </button>
     </div>
     </div>
 </div>
@@ -61,16 +61,16 @@
         {
             <tr>
                 <td>
-                      @Html.ActionLink(prod.Name ,"AddEditCategory",new{prod.Id},new{@class="fw-bold"})
+                      @Html.ActionLink(prod.Name ,"AddEditCategory","Category",new{prod.Id},new{@class="fw-bold"})
                     
                 </td>
 
                 <td>
                    @if(prod.IsActive){
-                         @Html.ActionLink("DeActivate","ActivateDeactivateCategory",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to Deactivate this category')"})
+                         @Html.ActionLink("DeActivate","ActivateDeactivateCategory","Category",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to Deactivate this category')"})
                     }
                     else{
-                          @Html.ActionLink("Activate","ActivateDeactivateCategory",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to Activate this category')"})
+                          @Html.ActionLink("Activate","ActivateDeactivateCategory","Category",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to Activate this category')"})
                     }
                 </td>
                 

@@ -42,7 +42,7 @@
    
    <div class="col-md-6">
     <div class="text-center float-end">
-     <button class="btn btn-info" > <a asp-controller="Home" asp-action="AddEditProduct" style="text-decoration:none;color:white;">Add Product</a> </button>
+     <button class="btn btn-info" > <a asp-controller="Product" asp-action="AddEditProduct" style="text-decoration:none;color:white;">Add Product</a> </button>
     </div>
     </div>
 </div>
@@ -53,7 +53,7 @@
         <tr>
          <th>Product</th>
          <th>Photo</th>
-         <th>Category Id</th>
+         <th>Category</th>
          <th>Price</th>
          <th>Description</th>
          <th>Discount</th>
@@ -65,7 +65,7 @@
         {
             <tr>
                 <td>
-                      @Html.ActionLink(prod.Name ,"AddEditProduct",new{prod.Id},new{@class="fw-bold"})
+                      @Html.ActionLink(prod.Name ,"AddEditProduct","Product",new{prod.Id},new{@class="fw-bold"})
                     
                 </td>
 
@@ -74,7 +74,8 @@
                 </td>
 
                  <td>
-                      @prod.CategoryId
+                      @* @prod.CategoryId *@
+                      @prod.Category.Name
                     
                 </td>
 
@@ -90,20 +91,20 @@
 
                 <td>
                    @if(prod.IsEligibleForDiscount){
-                         @Html.ActionLink("Not Eligible","ActivateDeactivateEligible",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to make this product not eligible for discount')"})
+                         @Html.ActionLink("Not Eligible","ActivateDeactivateEligible","Product",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to make this product not eligible for discount')"})
                     }
                     else{
-                          @Html.ActionLink("Eligible","ActivateDeactivateEligible",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to make this product eligible for discount')"})
+                          @Html.ActionLink("Eligible","ActivateDeactivateEligible","Product",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to make this product eligible for discount')"})
                     }
                 </td>
 
                 
                 <td>
                    @if(prod.IsActive){
-                         @Html.ActionLink("In-Active","ActivateDeactivateProduct",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to make this product In-Active')"})
+                         @Html.ActionLink("In-Active","ActivateDeactivateProduct","Product",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to make this product In-Active')"})
                     }
                     else{
-                          @Html.ActionLink("Active","ActivateDeactivateProduct",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to make this product Active')"})
+                          @Html.ActionLink("Active","ActivateDeactivateProduct","Product",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to make this product Active')"})
                     }
                 </td>
 

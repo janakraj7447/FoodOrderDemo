@@ -14,6 +14,9 @@ builder.Services.AddScoped<IUserBussiness,UserBussiness>();
 builder.Services.AddScoped<IUserRepository,UserRepository>();
 builder.Services.AddScoped<ICategoryBussiness,CategoryBussiness>();
 builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
+builder.Services.AddScoped<IProductBussiness,ProductBussiness>();
+builder.Services.AddScoped<IProductRepository,ProductRepository>();
+
 
 builder.Services.AddControllersWithViews()
     .AddViewLocalization(Microsoft.AspNetCore.Mvc.Razor.LanguageViewLocationExpanderFormat.Suffix)
