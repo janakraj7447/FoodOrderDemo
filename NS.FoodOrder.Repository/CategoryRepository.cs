@@ -1,6 +1,6 @@
 namespace NS.FoodOrder.Repository
 {
-    public class FoodRepository:IFoodRepository
+    public class CategoryRepository:ICategoryRepository
     {
         
     }

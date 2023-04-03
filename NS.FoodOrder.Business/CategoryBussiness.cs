@@ -1,6 +1,6 @@
 namespace NS.FoodOrder.Business
 {
-    public class FoodBussiness:IFoodBussiness
+    public class CategoryBussiness:ICategoryBussiness
     {
         
     }

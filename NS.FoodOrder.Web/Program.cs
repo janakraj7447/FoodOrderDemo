@@ -10,10 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IFoodBussiness,FoodBussiness>();
-builder.Services.AddScoped<IFoodRepository,FoodRepository>();
 builder.Services.AddScoped<IUserBussiness,UserBussiness>();
 builder.Services.AddScoped<IUserRepository,UserRepository>();
+builder.Services.AddScoped<ICategoryBussiness,CategoryBussiness>();
+builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
+
 builder.Services.AddControllersWithViews()
     .AddViewLocalization(Microsoft.AspNetCore.Mvc.Razor.LanguageViewLocationExpanderFormat.Suffix)
     .AddDataAnnotationsLocalization();

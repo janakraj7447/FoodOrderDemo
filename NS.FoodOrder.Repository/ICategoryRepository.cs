@@ -1,6 +1,6 @@
 namespace NS.FoodOrder.Repository
 {
-    public interface IFoodRepository
+    public interface ICategoryRepository
     {
          
     }

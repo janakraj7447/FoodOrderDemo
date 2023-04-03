@@ -1,6 +1,6 @@
 namespace NS.FoodOrder.Business
 {
-    public interface IFoodBussiness
+    public interface ICategoryBussiness
     {
          
     }
