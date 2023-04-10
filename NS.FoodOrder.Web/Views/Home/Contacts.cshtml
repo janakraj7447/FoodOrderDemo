@@ -1,0 +1,70 @@
+@model IEnumerable<NS.FoodOrder.Data.Entities.ContactU>
+
+@{
+    Layout="_Layout";
+}
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F2F2F2;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #4CAF50;
+        text-decoration: underline;
+    }
+</style>
+<div>
+    <h2>Contacts</h2>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Description</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prod in Model)
+        {
+            <tr>
+                <td>
+                    @prod.Name
+                   
+                </td>
+                <td>
+                    @prod.Email
+                </td>
+                <td>
+                    @prod.Subject
+                </td>
+                <td>
+                    @prod.Description
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

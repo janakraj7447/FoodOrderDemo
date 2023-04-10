@@ -18675,18 +18675,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Home\\Contacts.cshtml",
+      "TargetPath": "Views\\Home\\Contacts.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Category\\AddEditCategory.cshtml",
       "TargetPath": "Views\\Category\\AddEditCategory.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Home\\Home.cshtml",
-      "TargetPath": "Views\\Home\\Home.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Shared\\_Layout2.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout2.cshtml",
+      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Shared\\_MenuItems.cshtml",
+      "TargetPath": "Views\\Shared\\_MenuItems.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18715,13 +18715,18 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Shared\\_LayoutContact.cshtml",
-      "TargetPath": "Views\\Shared\\_LayoutContact.cshtml",
+      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Home\\_Menu.cshtml",
+      "TargetPath": "Views\\Home\\_Menu.cshtml",
       "FileKind": "mvc"
     },
     {
       "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Product\\ViewCart.cshtml",
+      "TargetPath": "Views\\Product\\ViewCart.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18732,11 +18737,6 @@
     {
       "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Shared\\_LayoutHome.cshtml",
-      "TargetPath": "Views\\Shared\\_LayoutHome.cshtml",
       "FileKind": "mvc"
     },
     {

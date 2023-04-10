@@ -81,6 +81,13 @@ namespace NS.FoodOrder.Repository
 
         }
 
+        
+        public List<ContactU> GetContactList()
+        {
+            return _ctx.ContactUs.ToList();
+
+        }
+
         public bool ActivateDeactivateRecord(int Id)
         {
             var candidateRecord = _ctx.Users.FirstOrDefault(x => x.Id == Id);

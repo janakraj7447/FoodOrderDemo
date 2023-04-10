@@ -76,7 +76,29 @@ namespace NS.FoodOrder.Repository
             return true;
 
         }
-
+        public List<Product> GetProductByCategoryId(int categoryId)
+        {
+            List<Product> productList=new List<Product>();
+            if(categoryId>0){
+             productList = _ctx.Products.Where(x=>x.CategoryId==categoryId).ToList();
+            }
+            else{
+             productList = _ctx.Products.ToList();
+            }
+            return productList;
+            
+        }
+        public bool AddToCart(CartViewModel cartViewModel){
+          Cart cart=new Cart();
+          cart.ProductId=cartViewModel.ProductId;
+          cart.UserId=cartViewModel.UserId;
+          cart.Quantity=1;
+          cart.CreatedBy=cartViewModel.Id;
+          cart.CreatedDate=DateTime.UtcNow;
+          _ctx.Carts.Add(cart);
+          _ctx.SaveChanges();
+          return true;
+        }
 
     }
 }

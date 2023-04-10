@@ -8,6 +8,8 @@ namespace NS.FoodOrder.Repository
         bool ActivateDeactivateEligible(int Id);
         bool ActivateDeactivateProduct(int Id);
         List<Product> GetProductList();
+        List<Product> GetProductByCategoryId(int categoryId);
         AddEditProductViewModel GetProductById(int id);
+        bool AddToCart(CartViewModel cartViewModel);
     }
 }

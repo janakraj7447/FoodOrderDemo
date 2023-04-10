@@ -12,6 +12,8 @@ using PagedList;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Foodorder.Controllers;
+
+[Authorize]
 // 
 public class HomeController : Controller
 {
@@ -57,15 +59,16 @@ public class HomeController : Controller
         return View(UserDetail);
         
     }
-    public IActionResult Home()
-    {
-        return View();
-    }
 
     [Authorize(Roles = "2")]
     public IActionResult Contact()
     {
         return View();
+    }
+
+    public IActionResult Contacts(){
+        var contactDetail=_iUserBussiness.GetContactList();
+        return View(contactDetail);
     }
 
     [HttpPost]

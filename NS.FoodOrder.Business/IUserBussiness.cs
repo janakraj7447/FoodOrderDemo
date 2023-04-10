@@ -9,9 +9,9 @@ namespace NS.FoodOrder.Business
         bool VerifyEmail(string email);
 
         List<User> GetUserList(string Sorting_Order, string Search_Data);
+        List<ContactU> GetContactList();
         bool ActivateDeactivateRecord(int Id);
-        // bool ActivateDeactivateCategory(int Id);
-
+      
         bool AddContactDetails(ContactViewModel contactViewModel);
 
     }

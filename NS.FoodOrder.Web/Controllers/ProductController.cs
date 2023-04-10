@@ -10,8 +10,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using PagedList;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Security.Claims;
 
 namespace Foodorder.Controllers;
+
+[Authorize]
 public class ProductController : Controller
 {
 
@@ -29,12 +32,13 @@ public class ProductController : Controller
 
     }
 
+
     public IActionResult Products()
     {
         var UserDetail = _iProductBussiness.GetProductList();
         return View(UserDetail);
     }
-  
+
     [HttpGet]
     public IActionResult AddEditProduct(int id)
     {
@@ -47,34 +51,34 @@ public class ProductController : Controller
     }
 
     [HttpPost]
-        public IActionResult AddEditProduct(AddEditProductViewModel addEditProductViewModel, IFormFile Photo)
+    public IActionResult AddEditProduct(AddEditProductViewModel addEditProductViewModel, IFormFile Photo)
+    {
+        string wwwPath = this.Environment.WebRootPath;
+        string contentPath = this.Environment.ContentRootPath;
+        string path = Path.Combine(this.Environment.WebRootPath, "UploadProduct");
+        if (!Directory.Exists(path))
         {
-            string wwwPath = this.Environment.WebRootPath;
-            string contentPath = this.Environment.ContentRootPath;
-            string path = Path.Combine(this.Environment.WebRootPath, "UploadProduct");
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-            if (addEditProductViewModel.Id == 0)
-            {
-                List<string> uploadedFiles = new List<string>();
-                string fileName = Path.GetFileName(Photo.FileName);
-                using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
-                {
-                    Photo.CopyTo(stream);
-                    uploadedFiles.Add(fileName);
-                    ViewBag.Message += string.Format("<b>{0}</b> Profile pic uploaded.<br />", fileName);
-                }
-
-                addEditProductViewModel.Photo = fileName;
-            }
-
-
-            addEditProductViewModel.CreatedBy = Convert.ToInt64(User.Claims.FirstOrDefault(c => c.Type == "UserId").Value);
-            _iProductBussiness.AddEditProduct(addEditProductViewModel);
-            return RedirectToAction(nameof(Products));
+            Directory.CreateDirectory(path);
         }
+        if (addEditProductViewModel.Id == 0)
+        {
+            List<string> uploadedFiles = new List<string>();
+            string fileName = Path.GetFileName(Photo.FileName);
+            using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
+            {
+                Photo.CopyTo(stream);
+                uploadedFiles.Add(fileName);
+                ViewBag.Message += string.Format("<b>{0}</b> Profile pic uploaded.<br />", fileName);
+            }
+
+            addEditProductViewModel.Photo = fileName;
+        }
+
+
+        addEditProductViewModel.CreatedBy = Convert.ToInt64(User.Claims.FirstOrDefault(c => c.Type == "UserId").Value);
+        _iProductBussiness.AddEditProduct(addEditProductViewModel);
+        return RedirectToAction(nameof(Products));
+    }
     public IActionResult ActivateDeactivateProduct(int Id)
     {
 
@@ -82,11 +86,41 @@ public class ProductController : Controller
         return RedirectToAction(actionName: "Products", controllerName: "Product");
 
     }
-     public IActionResult ActivateDeactivateEligible(int Id)
+    public IActionResult ActivateDeactivateEligible(int Id)
     {
 
         _iProductBussiness.ActivateDeactivateEligible(Id);
         return RedirectToAction(actionName: "Products", controllerName: "Product");
+
+    }
+
+
+    [HttpGet]
+    public IActionResult Details(int categoryId)
+    {
+        var productList = _iProductBussiness.GetProductByCategoryId(categoryId);
+
+        return PartialView("_MenuItems", productList);
+
+    }
+
+    public IActionResult ViewCart()
+    {
+        return View();
+    }
+
+    [HttpGet]
+    public IActionResult AddToCart(int id)
+    {
+        var userId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "UserId")?.Value;
+        CartViewModel cartViewModel = new CartViewModel();
+        cartViewModel.ProductId = id;
+        cartViewModel.UserId = Convert.ToInt64(userId);
+
+        _iProductBussiness.AddToCart(cartViewModel);
+        // return View();
+         return RedirectToAction(actionName: "ViewCart", controllerName: "Product");
+        
 
     }
 }

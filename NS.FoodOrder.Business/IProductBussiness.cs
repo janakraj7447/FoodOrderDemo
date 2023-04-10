@@ -8,8 +8,12 @@ namespace NS.FoodOrder.Business
         List<Product> GetProductList();
 
         AddEditProductViewModel GetProductById(int id);
+
+         List<Product> GetProductByCategoryId(int categoryId);
         bool ActivateDeactivateEligible(int Id);
 
         bool ActivateDeactivateProduct(int id);
+
+        bool AddToCart(CartViewModel cartViewModel);
     }
 }

@@ -8,6 +8,7 @@ namespace NS.FoodOrder.Repository
         bool AddUser(Customer customer);
         bool VerifyEmail(string email);
         public List<User> GetUserList(string Sorting_Order, string Search_Data);
+        public List<ContactU> GetContactList();
         bool ActivateDeactivateRecord(int Id);
         bool AddContactDetails(ContactViewModel contactViewModel);
 

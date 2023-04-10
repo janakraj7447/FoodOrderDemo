@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\NS.FoodOrder.Web.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\1pic.jpg",
+      "PackagePath": "staticwebassets\\UploadProduct\\1pic.jpg"
+    },
+    {
       "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\f1.png",
       "PackagePath": "staticwebassets\\UploadProduct\\f1.png"
     },
@@ -23,6 +27,10 @@
     {
       "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\f5.png",
       "PackagePath": "staticwebassets\\UploadProduct\\f5.png"
+    },
+    {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\punjabi.jpg",
+      "PackagePath": "staticwebassets\\UploadProduct\\punjabi.jpg"
     },
     {
       "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\Screenshot (13).png",

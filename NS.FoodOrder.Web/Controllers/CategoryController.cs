@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using PagedList;
 using Microsoft.AspNetCore.Mvc.Rendering;
+
+[Authorize]
 public class CategoryController : Controller
 {
 

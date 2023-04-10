@@ -44,7 +44,7 @@ namespace Foodorder.Controllers
                 return RedirectToAction("UserDetails","Home");
                 }
                 else{
-                    return RedirectToAction("Contact","Home");
+                    return RedirectToAction("Menu","Home");
                 }
             }
             else if(userDetails!=null && !userDetails.IsActive){

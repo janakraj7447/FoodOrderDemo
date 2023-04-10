@@ -31,6 +31,11 @@ namespace NS.FoodOrder.Business
             return _iUserRepository.GetUserList(Sorting_Order, Search_Data);
         }
 
+         public List<ContactU> GetContactList()
+        {
+            return _iUserRepository.GetContactList();
+        }
+
         public bool ActivateDeactivateRecord(int Id)
         {
             return _iUserRepository.ActivateDeactivateRecord(Id);

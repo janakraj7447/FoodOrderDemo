@@ -1,39 +1,11 @@
-@model IEnumerable<NS.FoodOrder.Data.Entities.Product>;
+ @model IEnumerable<NS.FoodOrder.Data.Entities.Product>
+    
+ <div class="row grid">
 
-@{
-  Layout = "_LayoutMenu";
-}
-<section class="food_section layout_padding">
-  <div class="container">
-    <div class="heading_container heading_center">
-      <h2>
-        Our Menu
-      </h2>
-    </div>
-
-    @{
-      var category = Model.Where(x=>x.Category.IsActive==true).Select(x =>new{x.Category.Name,x.Category.Id}).Distinct().ToList();
-    }
-    <ul class="filters_menu">
-      <li class="active" data-filter="*" onclick="myFunction(this)" data-id="0">All</li>
-      @foreach (var item in category)
-      {
-        <li data-filter=".pizza" onclick="myFunction(this)" data-id="@item.Id">@item.Name</li>
-      }
-      @* <li data-filter=".burger">Burger</li>
-      <li data-filter=".pizza">Pizza</li>
-      <li data-filter=".pasta">Pasta</li>
-      <li data-filter=".fries">Fries</li> *@
-    </ul>
-
-    <div class="filters-content">
-      @* <div class="row grid"> *@
-      <div id="dvUserdetails">  
-    </div>  
-        @* @if (Model != null) *@
-        @* {  *@
-          @* var italian=Model.Where(x=>x.Category.Name=="Italian").ToList(); *@
-          @* foreach (var item in Model.Where(x => x.IsActive == true))
+        @if (Model != null)
+        {
+         
+          foreach (var item in Model.Where(x => x.IsActive == true))
           {
             <div class="col-sm-6 col-lg-4 all">
               <div class="box">
@@ -87,25 +59,4 @@
               </div>
             </div>
           }
-        } *@
-
-      @* </div> *@
-    </div>
-  </div>
-</section>
- @section Scripts{
-<script>
-  function myFunction(el) {
-    var categoryId = $(el).attr('data-id');
-    @* alert(categoryId); *@
-    $.ajax({
-      url: '/Product/Details?categoryId='+categoryId,
-      type: 'GET',
-       dataType: 'html',
-      success:function (result) {
-        $('#dvUserdetails').html(result);
-      }
-      });
-  }
-</script>
-}
+        }

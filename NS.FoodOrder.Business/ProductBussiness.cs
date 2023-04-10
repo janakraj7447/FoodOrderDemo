@@ -46,5 +46,13 @@ namespace NS.FoodOrder.Business
         {
             return _iProductRepository.ActivateDeactivateProduct(Id);
         }
+
+        public List<Product> GetProductByCategoryId(int categoryId){
+            return _iProductRepository.GetProductByCategoryId(categoryId);
+        }
+
+        public bool AddToCart(CartViewModel cartViewModel){
+            return _iProductRepository.AddToCart(cartViewModel);
+        }
     }
 }
