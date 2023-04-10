@@ -15,5 +15,7 @@ namespace NS.FoodOrder.Business
         bool ActivateDeactivateProduct(int id);
 
         bool AddToCart(CartViewModel cartViewModel);
+        List<Cart> GetCartItems(long userId);
+        bool  DeleteItem(int Id);
     }
 }

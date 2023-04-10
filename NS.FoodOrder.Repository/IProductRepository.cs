@@ -11,5 +11,7 @@ namespace NS.FoodOrder.Repository
         List<Product> GetProductByCategoryId(int categoryId);
         AddEditProductViewModel GetProductById(int id);
         bool AddToCart(CartViewModel cartViewModel);
+        bool DeleteItem(int Id);
+        List<Cart> GetCartItems(long userId);
     }
 }

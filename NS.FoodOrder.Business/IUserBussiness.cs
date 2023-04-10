@@ -13,6 +13,7 @@ namespace NS.FoodOrder.Business
         bool ActivateDeactivateRecord(int Id);
       
         bool AddContactDetails(ContactViewModel contactViewModel);
+       
 
     }
 }

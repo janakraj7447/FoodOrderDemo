@@ -78,26 +78,46 @@ namespace NS.FoodOrder.Repository
         }
         public List<Product> GetProductByCategoryId(int categoryId)
         {
-            List<Product> productList=new List<Product>();
-            if(categoryId>0){
-             productList = _ctx.Products.Where(x=>x.CategoryId==categoryId).ToList();
+            List<Product> productList = new List<Product>();
+            if (categoryId > 0)
+            {
+                productList = _ctx.Products.Where(x => x.CategoryId == categoryId).ToList();
             }
-            else{
-             productList = _ctx.Products.ToList();
+            else
+            {
+                productList = _ctx.Products.ToList();
             }
             return productList;
-            
+
         }
-        public bool AddToCart(CartViewModel cartViewModel){
-          Cart cart=new Cart();
-          cart.ProductId=cartViewModel.ProductId;
-          cart.UserId=cartViewModel.UserId;
-          cart.Quantity=1;
-          cart.CreatedBy=cartViewModel.Id;
-          cart.CreatedDate=DateTime.UtcNow;
-          _ctx.Carts.Add(cart);
-          _ctx.SaveChanges();
-          return true;
+        public bool AddToCart(CartViewModel cartViewModel)
+        {
+            Cart cart = new Cart();
+            cart.ProductId = cartViewModel.ProductId;
+            cart.UserId = cartViewModel.UserId;
+            cart.Quantity = 1;
+            cart.CreatedBy = cartViewModel.Id;
+            cart.CreatedDate = DateTime.UtcNow;
+            _ctx.Carts.Add(cart);
+            _ctx.SaveChanges();
+            return true;
+        }
+
+        public List<Cart> GetCartItems(long userId){
+         var cartItems=_ctx.Carts.Include("Product").Include("User").Where(x=>x.UserId==userId).ToList();
+         return cartItems;
+        }
+        
+        public bool DeleteItem(int Id)
+        {
+            var item = _ctx.Carts.FirstOrDefault(x => x.Id == Id);
+            if (item != null)
+            {
+                _ctx.Carts.Remove(item);
+                _ctx.SaveChanges();
+
+            }
+            return true;
         }
 
     }

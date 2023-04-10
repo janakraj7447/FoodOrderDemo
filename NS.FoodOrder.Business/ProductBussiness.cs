@@ -54,5 +54,11 @@ namespace NS.FoodOrder.Business
         public bool AddToCart(CartViewModel cartViewModel){
             return _iProductRepository.AddToCart(cartViewModel);
         }
+        public List<Cart> GetCartItems(long userId){
+            return _iProductRepository.GetCartItems(userId);
+         }
+        public bool DeleteItem(int Id){
+            return _iProductRepository.DeleteItem(Id);
+        }
     }
 }

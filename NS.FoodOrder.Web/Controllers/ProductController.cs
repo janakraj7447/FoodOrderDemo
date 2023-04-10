@@ -106,7 +106,10 @@ public class ProductController : Controller
 
     public IActionResult ViewCart()
     {
-        return View();
+        long userId = Convert.ToInt64(HttpContext.User.Claims.FirstOrDefault(x => x.Type == "UserId")?.Value);
+        var cartItems = _iProductBussiness.GetCartItems(userId);
+
+        return View(cartItems);
     }
 
     [HttpGet]
@@ -119,8 +122,19 @@ public class ProductController : Controller
 
         _iProductBussiness.AddToCart(cartViewModel);
         // return View();
-         return RedirectToAction(actionName: "ViewCart", controllerName: "Product");
-        
+        return RedirectToAction(actionName: "ViewCart", controllerName: "Product");
+
 
     }
+    public IActionResult DeleteItem(int Id)
+    {
+        _iProductBussiness.DeleteItem(Id);
+        return RedirectToAction(actionName: "ViewCart", controllerName: "Product");
+    }
 }
+
+    // public IActionResult GetCartItems(){
+    //     long userId = Convert.ToInt64(HttpContext.User.Claims.FirstOrDefault(x => x.Type == "UserId")?.Value);
+    //     _iProductBussiness.GetCartItems(userId);
+    //     return View();
+    // }
