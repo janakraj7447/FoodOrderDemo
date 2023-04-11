@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nElDWypJJ3+qqRA9pPergJv0yoo792oYJGOATPVlyws=",
+  "Hash": "Qx1qUPRro2v6lxS2RKiMvSuHutxIFH7scvlQSJD2sN0=",
   "Source": "NS.FoodOrder.Web",
   "BasePath": "_content/NS.FoodOrder.Web",
   "Mode": "Default",
@@ -1613,6 +1613,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\UploadProduct\\f5.png"
+    },
+    {
+      "Identity": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\o2.jpg",
+      "SourceId": "NS.FoodOrder.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\",
+      "BasePath": "_content/NS.FoodOrder.Web",
+      "RelativePath": "UploadProduct/o2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\UploadProduct\\o2.jpg"
     },
     {
       "Identity": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\punjabi.jpg",

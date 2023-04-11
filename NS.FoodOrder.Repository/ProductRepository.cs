@@ -92,22 +92,31 @@ namespace NS.FoodOrder.Repository
         }
         public bool AddToCart(CartViewModel cartViewModel)
         {
-            Cart cart = new Cart();
-            cart.ProductId = cartViewModel.ProductId;
-            cart.UserId = cartViewModel.UserId;
-            cart.Quantity = 1;
-            cart.CreatedBy = cartViewModel.Id;
-            cart.CreatedDate = DateTime.UtcNow;
-            _ctx.Carts.Add(cart);
-            _ctx.SaveChanges();
-            return true;
+            if (_ctx.Carts.Any(x => x.ProductId == cartViewModel.ProductId && x.UserId == cartViewModel.UserId))
+            {
+                Cart cart = _ctx.Carts.FirstOrDefault(x => x.ProductId == cartViewModel.ProductId && x.UserId == cartViewModel.UserId);
+                cart.Quantity = cart.Quantity + 1;
+                return _ctx.SaveChanges() > 0;
+            }
+            else
+            {
+                Cart cart = new Cart();
+                cart.ProductId = cartViewModel.ProductId;
+                cart.UserId = cartViewModel.UserId;
+                cart.Quantity = 1;
+                cart.CreatedBy = cartViewModel.UserId;
+                cart.CreatedDate = DateTime.UtcNow;
+                _ctx.Carts.Add(cart);
+                return _ctx.SaveChanges() > 0;
+            }
         }
 
-        public List<Cart> GetCartItems(long userId){
-         var cartItems=_ctx.Carts.Include("Product").Include("User").Where(x=>x.UserId==userId).ToList();
-         return cartItems;
+        public List<Cart> GetCartItems(long userId)
+        {
+            var cartItems = _ctx.Carts.Include("Product").Include("User").Where(x => x.UserId == userId).ToList();
+            return cartItems;
         }
-        
+
         public bool DeleteItem(int Id)
         {
             var item = _ctx.Carts.FirstOrDefault(x => x.Id == Id);
@@ -119,6 +128,27 @@ namespace NS.FoodOrder.Repository
             }
             return true;
         }
+        public bool AddQuantity(int productId, long userId)
+        {
+            if (_ctx.Carts.Any(x => x.ProductId == productId && x.UserId == userId))
+            {
+                Cart cart = _ctx.Carts.FirstOrDefault(x => x.ProductId == productId && x.UserId == userId);
+                cart.Quantity = cart.Quantity + 1;
+                return _ctx.SaveChanges() > 0;
+            }
+             return false;
+        }
+        public bool SubtractQuantity(int productId, long userId)
+        {
+            if (_ctx.Carts.Any(x => x.ProductId == productId && x.UserId == userId))
+            {
+                Cart cart = _ctx.Carts.FirstOrDefault(x => x.ProductId == productId && x.UserId == userId);
+                cart.Quantity = cart.Quantity - 1;
+                return _ctx.SaveChanges() > 0;
+            }
+            return false;
+        }
+
 
     }
 }

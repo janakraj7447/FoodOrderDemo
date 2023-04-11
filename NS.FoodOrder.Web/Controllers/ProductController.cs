@@ -126,15 +126,43 @@ public class ProductController : Controller
 
 
     }
+    [HttpGet]
+    public bool AddQuantity(int productId)
+    {
+        var userId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "UserId")?.Value;
+        return _iProductBussiness.AddQuantity(productId, Convert.ToInt64(userId));
+    }
+    [HttpGet]
+    public bool SubtractQuantity(int productId)
+    {
+        var userId = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "UserId")?.Value;
+        return _iProductBussiness.SubtractQuantity(productId, Convert.ToInt64(userId));
+    }
     public IActionResult DeleteItem(int Id)
     {
         _iProductBussiness.DeleteItem(Id);
         return RedirectToAction(actionName: "ViewCart", controllerName: "Product");
     }
+
+    // [HttpPost]
+    // public ActionResult UpdateCart(Cart cart)
+    // {
+    //     using (var context = new FoodOrderDBContext())
+    //     {
+    //         Cart updatedCart = (from c in context.Carts
+    //                             where c.Id == cart.Id
+    //                             select c).FirstOrDefault();
+
+    //         if (updatedCart != null)
+    //         {
+    //             updatedCart.Quantity = cart.Quantity;
+    //             context.SaveChanges();
+    //             return Json(true);
+    //         }
+    //     }
+
+    //     return Json(false);
+    // }
 }
 
-    // public IActionResult GetCartItems(){
-    //     long userId = Convert.ToInt64(HttpContext.User.Claims.FirstOrDefault(x => x.Type == "UserId")?.Value);
-    //     _iProductBussiness.GetCartItems(userId);
-    //     return View();
-    // }
+

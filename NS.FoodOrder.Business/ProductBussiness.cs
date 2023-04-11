@@ -3,25 +3,25 @@ using NS.FoodOrder.Data.CustomEntities;
 using NS.FoodOrder.Repository;
 namespace NS.FoodOrder.Business
 {
-    public class ProductBussiness:IProductBussiness
+    public class ProductBussiness : IProductBussiness
     {
-          public readonly IProductRepository _iProductRepository;
+        public readonly IProductRepository _iProductRepository;
         public ProductBussiness(IProductRepository iProductRepository)
         {
             _iProductRepository = iProductRepository;
 
         }
-           public bool AddEditProduct(AddEditProductViewModel addEditProductViewModel)
+        public bool AddEditProduct(AddEditProductViewModel addEditProductViewModel)
         {
             return _iProductRepository.AddEditProduct(new Product()
             {
                 Id = addEditProductViewModel.Id,
                 Name = addEditProductViewModel.Name,
-                Price=addEditProductViewModel.Price,
-                CategoryId=addEditProductViewModel.CategoryId,
-                Description=addEditProductViewModel.Description,
-                Photo=addEditProductViewModel.Photo,
-                IsEligibleForDiscount=true,
+                Price = addEditProductViewModel.Price,
+                CategoryId = addEditProductViewModel.CategoryId,
+                Description = addEditProductViewModel.Description,
+                Photo = addEditProductViewModel.Photo,
+                IsEligibleForDiscount = true,
                 IsActive = true,
                 IsDeleted = false,
                 CreatedDate = DateTime.UtcNow,
@@ -29,12 +29,12 @@ namespace NS.FoodOrder.Business
             });
         }
 
-          public AddEditProductViewModel GetProductById(int id)
+        public AddEditProductViewModel GetProductById(int id)
         {
             return _iProductRepository.GetProductById(id);
         }
 
-         public List<Product> GetProductList()
+        public List<Product> GetProductList()
         {
             return _iProductRepository.GetProductList();
         }
@@ -42,23 +42,33 @@ namespace NS.FoodOrder.Business
         {
             return _iProductRepository.ActivateDeactivateEligible(Id);
         }
-           public bool ActivateDeactivateProduct(int Id)
+        public bool ActivateDeactivateProduct(int Id)
         {
             return _iProductRepository.ActivateDeactivateProduct(Id);
         }
 
-        public List<Product> GetProductByCategoryId(int categoryId){
+        public List<Product> GetProductByCategoryId(int categoryId)
+        {
             return _iProductRepository.GetProductByCategoryId(categoryId);
         }
 
-        public bool AddToCart(CartViewModel cartViewModel){
+        public bool AddToCart(CartViewModel cartViewModel)
+        {
             return _iProductRepository.AddToCart(cartViewModel);
         }
-        public List<Cart> GetCartItems(long userId){
+        public List<Cart> GetCartItems(long userId)
+        {
             return _iProductRepository.GetCartItems(userId);
-         }
-        public bool DeleteItem(int Id){
+        }
+        public bool DeleteItem(int Id)
+        {
             return _iProductRepository.DeleteItem(Id);
         }
-    }
+         public bool AddQuantity(int productId,long userId){
+            return _iProductRepository.AddQuantity(productId,userId);
+        }
+        public bool SubtractQuantity(int productId,long userId){
+            return _iProductRepository.SubtractQuantity(productId,userId);
+        }
+}
 }
