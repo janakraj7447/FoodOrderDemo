@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/janak.raj/FoodOrder/NS.FoodOrder.Web/Views/Cart/OrderReceived.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxPcmRlclJlY2VpdmVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/janak.raj/FoodOrder/NS.FoodOrder.Web/Views/Cart/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxQYXltZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/janak.raj/FoodOrder/NS.FoodOrder.Web/Views/Cart/PaymentFailed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxQYXltZW50RmFpbGVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/janak.raj/FoodOrder/NS.FoodOrder.Web/Views/Cart/PaymentSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxQYXltZW50U3VjY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/janak.raj/FoodOrder/NS.FoodOrder.Web/Views/Cart/ViewCart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxWaWV3Q2FydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/janak.raj/FoodOrder/NS.FoodOrder.Web/Views/Category/AddEditCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQWRkRWRpdENhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,10 +68,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2VyRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/janak.raj/FoodOrder/NS.FoodOrder.Web/Views/Home/_Menu.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfTWVudS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/janak.raj/FoodOrder/NS.FoodOrder.Web/Views/Login/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5caW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -66,10 +82,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/janak.raj/FoodOrder/NS.FoodOrder.Web/Views/Product/Products.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0cy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/janak.raj/FoodOrder/NS.FoodOrder.Web/Views/Product/ViewCart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxWaWV3Q2FydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/janak.raj/FoodOrder/NS.FoodOrder.Web/Views/Shared/Error.cshtml]

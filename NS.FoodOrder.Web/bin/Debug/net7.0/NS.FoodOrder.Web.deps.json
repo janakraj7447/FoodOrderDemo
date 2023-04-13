@@ -14,6 +14,7 @@
           "NS.FoodOrder.Data": "1.0.0",
           "NS.FoodOrder.Repository": "1.0.0",
           "PagedList.Mvc": "4.5.0",
+          "PayPal": "1.9.1",
           "System.Linq.Dynamic": "1.0.8"
         },
         "runtime": {
@@ -926,6 +927,17 @@
           }
         }
       },
+      "PayPal/1.9.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net451/PayPal.dll": {
+            "assemblyVersion": "1.9.1.0",
+            "fileVersion": "1.9.1.0"
+          }
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -1829,6 +1841,7 @@
           "Microsoft.AspNetCore.Routing": "2.2.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.6",
+          "PayPal": "1.9.1",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "runtime": {
@@ -2550,6 +2563,13 @@
       "sha512": "sha512-D0M4qW2g4a9cwG8ozIKUnJheCrm5GpFTceqUl63AXWaAVnTgk+TysZYUOGMsBRuzid8aF+/E8b0bXM6+90jiEw==",
       "path": "pagedlist.mvc/4.5.0",
       "hashPath": "pagedlist.mvc.4.5.0.nupkg.sha512"
+    },
+    "PayPal/1.9.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b3vq6Lc9CwSooCX2tsZ02zb7E/K/cA6EILCoMynue+ZeVuitJNqt0YwxPnp7uN0Pccob02oDlpAjRLH+GRCRxA==",
+      "path": "paypal/1.9.1",
+      "hashPath": "paypal.1.9.1.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

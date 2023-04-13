@@ -29,12 +29,24 @@
       "PackagePath": "staticwebassets\\UploadProduct\\f5.png"
     },
     {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\idli.jpg",
+      "PackagePath": "staticwebassets\\UploadProduct\\idli.jpg"
+    },
+    {
       "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\o2.jpg",
       "PackagePath": "staticwebassets\\UploadProduct\\o2.jpg"
     },
     {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\pad-thai.jpg",
+      "PackagePath": "staticwebassets\\UploadProduct\\pad-thai.jpg"
+    },
+    {
       "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\punjabi.jpg",
       "PackagePath": "staticwebassets\\UploadProduct\\punjabi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\thali.jpg",
+      "PackagePath": "staticwebassets\\UploadProduct\\thali.jpg"
     },
     {
       "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\Screenshot (13).png",

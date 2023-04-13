@@ -9,9 +9,11 @@ public partial class OrderDetail
 
     public string BillValue { get; set; }
 
-    public long PaymentModeId { get; set; }
+    public long? PaymentModeId { get; set; }
 
     public bool? IsActive { get; set; }
+
+    public int? StatusId { get; set; }
 
     public bool IsDeleted { get; set; }
 

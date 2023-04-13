@@ -1,0 +1,86 @@
+@model List<NS.FoodOrder.Data.Entities.OrderReceived>
+@{
+    Layout = "_LayoutMenu";
+}
+ <style>
+    /* Style the table header */
+    thead {
+        background-color: #F2F2F2;
+    }
+    th {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    /* Style the table rows */
+
+    tr:nth-child(even) {
+        background-color: #F2F2F2;
+    }
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    /* Style the order ID column */
+    td:first-child {
+        font-weight: bold;
+    }
+    /* Style the order value column */
+    td:nth-child(2) {
+        font-weight: bold;
+    }
+    /* Style the quantity column */
+    td:last-child {
+        text-align: center;
+    }
+</style> 
+<div class="container pt-5" style="display:flex; Justify-content:center">
+ <h2>Your Order</h2>
+</div>
+<div class="container pt-5" style="display:flex; Justify-content:center">
+<table>
+    <thead>
+        <tr>
+         <th>OrderId</th>
+         <th>Order Value</th>
+         <th>Product</th>
+         <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+       @{
+        var orderDetailId=@Model.FirstOrDefault().OrderDetailId;
+       }
+            <tr>
+                <td>
+                    #@orderDetailId
+                </td>
+
+                <td>
+                   ₹ @Model.FirstOrDefault().OrderDetail.BillValue
+                </td>
+                
+                  
+            
+           <td>
+           @foreach (var item in Model)
+                {
+                    <b>@item.Product.Name</b>  
+                    
+                    <b>@item.Quantity</b>  
+                      <br> 
+                 }
+            </td>
+</tr>
+    </tbody>
+</table>
+</div>
+
+
+<div class="text-center pt-5">
+    @Html
+   <a asp-controller="Cart" asp-action="PaymentWithPaypal" asp-route-id='@orderDetailId'>
+    <button type="submit" id="btnUpdate" class="btn"
+        style="background-color:#e69c00;border-radius:20px;color:white;">Pay Now</button>
+   </a>     
+</div>

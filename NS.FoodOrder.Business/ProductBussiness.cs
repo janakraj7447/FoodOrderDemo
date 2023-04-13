@@ -51,24 +51,7 @@ namespace NS.FoodOrder.Business
         {
             return _iProductRepository.GetProductByCategoryId(categoryId);
         }
+      
 
-        public bool AddToCart(CartViewModel cartViewModel)
-        {
-            return _iProductRepository.AddToCart(cartViewModel);
-        }
-        public List<Cart> GetCartItems(long userId)
-        {
-            return _iProductRepository.GetCartItems(userId);
-        }
-        public bool DeleteItem(int Id)
-        {
-            return _iProductRepository.DeleteItem(Id);
-        }
-         public bool AddQuantity(int productId,long userId){
-            return _iProductRepository.AddQuantity(productId,userId);
-        }
-        public bool SubtractQuantity(int productId,long userId){
-            return _iProductRepository.SubtractQuantity(productId,userId);
-        }
 }
 }

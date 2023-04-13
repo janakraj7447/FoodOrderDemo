@@ -33,8 +33,9 @@
         text-decoration: underline;
     }
 
-    .border-bottom{
-        border-bottom:1px solid red;
+    .borderBottom {
+        padding-top: 20px;
+        border-bottom: 1px solid red;
     }
 </style>
 
@@ -47,7 +48,7 @@
 
 <div class="container pt-7">
     <h2 class="pt-3">Cart Items</h2>
-    <table class="border-bottom">
+    <table class="borderBottom">
         <thead>
             <tr>
                 <th>Product</th>
@@ -58,8 +59,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var prod in Model)
+            @{
+                var index = 0;
+            }
+            @* @foreach (var prod in Model) *@
+             @for(int i=0;i<Model.Count();i++)
             {
+                 var prod=Model.ToList()[i];
 
                 <tr>
                     <td>
@@ -70,7 +76,9 @@
                         @prod.Product.Name
                     </td>
                     @{
-                        var txtBoxId = "txtQuantity" + prod.ProductId;
+                        @* var txtBoxId = "txtQuantity" + prod.ProductId; *@
+                        var txtBoxId = "txtQuantity" + index;
+
                     }
                     <td>
                         <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
@@ -99,10 +107,11 @@
 
                     <td>
                         ₹ @prod.Product.Price
+                        @Html.Hidden(@prod.Product.Price,@prod.Product.Price,new{@class="cls-product-price"})
 
                     </td>
                     <td>
-                        <a asp-action="DeleteItem" asp-controller="Product" asp-route-id="@prod.Id">
+                        <a asp-action="DeleteItem" asp-controller="Cart" asp-route-id="@prod.Id">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-trash" style="margin:36px;" viewBox="0 0 16 16">
                                 <path
@@ -114,45 +123,44 @@
                     </td>
 
                 </tr>
+                index++;
             }
+
         </tbody>
     </table>
 </div>
 
+
+<div class="container borderBottom text-center p-4">
+    
+    Total Price = ₹ <span id="total-price"></span>
+</div>
+
 <div class="text-center pt-3">
+    <a asp-controller="Cart" asp-action="BuyNow">
     <button type="submit" id="btnUpdate" class="btn"
         style="background-color:#e69c00;border-radius:20px;color:white;">Buy Now</button>
+        </a>
 </div>
 
 
 
 @section scripts{
     <script>
-        @* $('.btn-stepdown').on("click",
-            function () {
-                this.parentNode.querySelector('input[type=number]').stepDown();
-            })
-
-        $('.btn-stepup').on("click",
-            function () {
-                this.parentNode.querySelector('input[type=number]').stepUp();
-                updateitem();
-            }) *@
-
-
         function AddQuantity(productId, controlId) {
+
             var qty = parseInt($("#" + controlId).val());
-            @* alert(qty); *@
             if (qty < 10) {
                 $.ajax({
-                    url: '/Product/AddQuantity?productId=' + productId,
+                    url: '/Cart/AddQuantity?productId=' + productId,
                     type: 'GET',
                     dataType: 'html',
                     success: function (result) {
-                        @* alert(result) *@
                         if (result) {
-                            $("#" + controlId).val(parseInt(qty+1));
+                            $("#" + controlId).val(parseInt(qty + 1));
+                            CalculateTotal();
                         }
+
                     }
                 });
             }
@@ -161,15 +169,18 @@
             }
         }
         function SubtractQuantity(productId, controlId) {
+
             var qty = parseInt($("#" + controlId).val());
             if (qty > 1) {
+
                 $.ajax({
-                    url: '/Product/SubtractQuantity?productId=' + productId,
+                    url: '/Cart/SubtractQuantity?productId=' + productId,
                     type: 'GET',
                     dataType: 'html',
                     success: function (result) {
                         if (result) {
-                            $("#" + controlId).val(parseInt(qty-1));
+                            $("#" + controlId).val(parseInt(qty - 1));
+                            CalculateTotal();
                         }
                     }
                 });
@@ -178,6 +189,22 @@
                 alert("Quantity must be greater than or equal to 1")
             }
         }
+
+        function CalculateTotal() {
+            var total = 0;
+            $(".cls-product-price").each(function (index, item) {
+                var fieldId = "txtQuantity" + index;
+                var quantity = document.getElementById(fieldId).value;
+                var itemPrice = parseInt($(item).val()) * parseInt(quantity);
+                total+=parseInt(itemPrice);
+                console.log(total);
+                $("#total-price").html(total);
+
+            });
+        }
+        addEventListener("DOMContentLoaded", (event) => {
+            CalculateTotal();
+        });
     </script>
 }
 

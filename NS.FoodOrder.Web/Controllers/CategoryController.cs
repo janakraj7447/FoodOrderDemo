@@ -26,6 +26,7 @@ public class CategoryController : Controller
         _iCategoryBussiness = iCategoryBussiness;
 
     }
+    [Authorize(Roles = "1")]
      public IActionResult Categories()
     {
         var UserDetail = _iCategoryBussiness.GetCategoryList();

@@ -18650,6 +18650,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Cart\\PaymentFailed.cshtml",
+      "TargetPath": "Views\\Cart\\PaymentFailed.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Login\\index.cshtml",
       "TargetPath": "Views\\Login\\index.cshtml",
       "FileKind": "mvc"
@@ -18700,8 +18705,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Cart\\PaymentSuccess.cshtml",
+      "TargetPath": "Views\\Cart\\PaymentSuccess.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Cart\\Payment.cshtml",
+      "TargetPath": "Views\\Cart\\Payment.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Product\\AddEditProduct.cshtml",
       "TargetPath": "Views\\Product\\AddEditProduct.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Cart\\ViewCart.cshtml",
+      "TargetPath": "Views\\Cart\\ViewCart.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18720,18 +18740,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Home\\_Menu.cshtml",
-      "TargetPath": "Views\\Home\\_Menu.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Product\\ViewCart.cshtml",
-      "TargetPath": "Views\\Product\\ViewCart.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18752,6 +18762,11 @@
     {
       "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\Views\\Cart\\OrderReceived.cshtml",
+      "TargetPath": "Views\\Cart\\OrderReceived.cshtml",
       "FileKind": "mvc"
     }
   ],

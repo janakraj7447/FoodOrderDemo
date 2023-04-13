@@ -9,6 +9,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
       <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+      <PackageReference Include="PayPal" Version="1.9.1" />
       <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 

@@ -90,65 +90,7 @@ namespace NS.FoodOrder.Repository
             return productList;
 
         }
-        public bool AddToCart(CartViewModel cartViewModel)
-        {
-            if (_ctx.Carts.Any(x => x.ProductId == cartViewModel.ProductId && x.UserId == cartViewModel.UserId))
-            {
-                Cart cart = _ctx.Carts.FirstOrDefault(x => x.ProductId == cartViewModel.ProductId && x.UserId == cartViewModel.UserId);
-                cart.Quantity = cart.Quantity + 1;
-                return _ctx.SaveChanges() > 0;
-            }
-            else
-            {
-                Cart cart = new Cart();
-                cart.ProductId = cartViewModel.ProductId;
-                cart.UserId = cartViewModel.UserId;
-                cart.Quantity = 1;
-                cart.CreatedBy = cartViewModel.UserId;
-                cart.CreatedDate = DateTime.UtcNow;
-                _ctx.Carts.Add(cart);
-                return _ctx.SaveChanges() > 0;
-            }
+       
         }
-
-        public List<Cart> GetCartItems(long userId)
-        {
-            var cartItems = _ctx.Carts.Include("Product").Include("User").Where(x => x.UserId == userId).ToList();
-            return cartItems;
-        }
-
-        public bool DeleteItem(int Id)
-        {
-            var item = _ctx.Carts.FirstOrDefault(x => x.Id == Id);
-            if (item != null)
-            {
-                _ctx.Carts.Remove(item);
-                _ctx.SaveChanges();
-
-            }
-            return true;
-        }
-        public bool AddQuantity(int productId, long userId)
-        {
-            if (_ctx.Carts.Any(x => x.ProductId == productId && x.UserId == userId))
-            {
-                Cart cart = _ctx.Carts.FirstOrDefault(x => x.ProductId == productId && x.UserId == userId);
-                cart.Quantity = cart.Quantity + 1;
-                return _ctx.SaveChanges() > 0;
-            }
-             return false;
-        }
-        public bool SubtractQuantity(int productId, long userId)
-        {
-            if (_ctx.Carts.Any(x => x.ProductId == productId && x.UserId == userId))
-            {
-                Cart cart = _ctx.Carts.FirstOrDefault(x => x.ProductId == productId && x.UserId == userId);
-                cart.Quantity = cart.Quantity - 1;
-                return _ctx.SaveChanges() > 0;
-            }
-            return false;
-        }
-
-
+       
     }
-}

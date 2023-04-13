@@ -33,6 +33,7 @@ public partial class FoodOrderDBContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Cart>(entity =>
@@ -106,11 +107,11 @@ public partial class FoodOrderDBContext : DbContext
             entity.Property(e => e.IsActive)
                 .IsRequired()
                 .HasDefaultValueSql("((1))");
+            entity.Property(e => e.StatusId).HasDefaultValueSql("((1))");
             entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
 
             entity.HasOne(d => d.PaymentMode).WithMany(p => p.OrderDetails)
                 .HasForeignKey(d => d.PaymentModeId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_OrderDetail_PaymentMode");
         });
 

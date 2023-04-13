@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "A4Y4xHZXszF9UaYUOnYdMRS9uQE98aRzuuv7va+XZld80v8FmBkEeT9C1FIr+yH8fzAwUD4AXITmaM3dU/JNdw==",
+  "dgSpecHash": "U9ZifiPWkNFWUAE/fl0dVDODWDP/8KzF6gZUB6mI2JcRPAbO+AtKJkvZysQlLP9EcJ0VRHabbBmZhdwECMObOA==",
   "success": true,
   "projectFilePath": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\NS.FoodOrder.Web.csproj",
   "expectedPackageFiles": [
@@ -104,6 +104,7 @@
     "C:\\Users\\janak.raj\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Users\\janak.raj\\.nuget\\packages\\pagedlist\\1.17.0\\pagedlist.1.17.0.nupkg.sha512",
     "C:\\Users\\janak.raj\\.nuget\\packages\\pagedlist.mvc\\4.5.0\\pagedlist.mvc.4.5.0.nupkg.sha512",
+    "C:\\Users\\janak.raj\\.nuget\\packages\\paypal\\1.9.1\\paypal.1.9.1.nupkg.sha512",
     "C:\\Users\\janak.raj\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\janak.raj\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\janak.raj\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -223,6 +224,16 @@
       "warningLevel": 1,
       "message": "Package 'PagedList.Mvc 4.5.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
       "libraryId": "PagedList.Mvc",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'PayPal 1.9.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "PayPal",
       "targetGraphs": [
         "net7.0"
       ]

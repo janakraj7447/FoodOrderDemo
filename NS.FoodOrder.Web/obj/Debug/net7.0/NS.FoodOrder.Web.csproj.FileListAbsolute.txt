@@ -94,3 +94,4 @@ C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Web\obj\Debug\net7.0\NS.FoodOrder.Web.
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Web\bin\Debug\net7.0\System.Linq.Dynamic.dll
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Web\bin\Debug\net7.0\PagedList.dll
 C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Web\bin\Debug\net7.0\PagedList.Mvc.dll
+C:\Users\janak.raj\FoodOrder\NS.FoodOrder.Web\bin\Debug\net7.0\PayPal.dll

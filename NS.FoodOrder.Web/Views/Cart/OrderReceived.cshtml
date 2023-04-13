@@ -1,0 +1,88 @@
+@model IEnumerable<NS.FoodOrder.Data.Entities.OrderDetail>
+@{
+    Layout = "_Layout";
+}
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F2F2F2;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #4CAF50;
+        text-decoration: underline;
+    }
+</style>
+
+<div>
+    <h2>Orders</h2>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Order No.</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Products</th>
+            <th>Quantity</th>
+            <th>Bill Value</th>
+            <th>Address</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @* @foreach (var prod in Model)
+        {
+            <tr>
+                <td>
+                    #@prod.OrderDetailId
+                   
+                </td>
+                <td>
+                    @prod.User.FirstName
+                </td>
+                <td>
+                   @prod.User.PhoneNo
+                </td>
+                <td>
+                    @prod.User.Email
+                     
+                </td>
+                 <td>
+
+                     @prod.Product.Name
+                 </td> 
+                <td>
+                    @prod.Quantity
+                </td>
+                <td>
+                    @prod.Price
+                </td>
+                <td>
+                    @prod.User.Address
+                </td>
+            </tr>
+        } *@
+    </tbody>
+</table>

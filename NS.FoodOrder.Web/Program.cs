@@ -16,6 +16,10 @@ builder.Services.AddScoped<ICategoryBussiness,CategoryBussiness>();
 builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
 builder.Services.AddScoped<IProductBussiness,ProductBussiness>();
 builder.Services.AddScoped<IProductRepository,ProductRepository>();
+builder.Services.AddScoped<ICartBussiness,CartBussiness>();
+builder.Services.AddScoped<ICartRepository,CartRepository>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddSession();
 
 
 builder.Services.AddControllersWithViews()
@@ -38,7 +42,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseSession();
 app.UseRouting();
 app.UseCookiePolicy();
 app.UseAuthentication();

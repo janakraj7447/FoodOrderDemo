@@ -24,13 +24,13 @@ public class HomeController : Controller
     public readonly IProductBussiness _iProductBussiness;
 
     private Microsoft.AspNetCore.Hosting.IHostingEnvironment Environment;
-    public HomeController(ILogger<HomeController> logger, Microsoft.AspNetCore.Hosting.IHostingEnvironment _environment, IUserBussiness iUserBussiness, ICategoryBussiness iCategoryBussiness,IProductBussiness iProductBussiness)
+    public HomeController(ILogger<HomeController> logger, Microsoft.AspNetCore.Hosting.IHostingEnvironment _environment, IUserBussiness iUserBussiness, ICategoryBussiness iCategoryBussiness, IProductBussiness iProductBussiness)
     {
         _logger = logger;
         Environment = _environment;
         _iUserBussiness = iUserBussiness;
         _iCategoryBussiness = iCategoryBussiness;
-        _iProductBussiness= iProductBussiness;
+        _iProductBussiness = iProductBussiness;
 
     }
 
@@ -38,26 +38,39 @@ public class HomeController : Controller
     {
         return View();
     }
-    [Authorize(Roles = "1")]
-    public IActionResult UserDetails(string Sorting_Order, string Search_Data)
-    {
 
+    [Authorize(Roles = "1")]
+    public IActionResult UserDetails(string Sorting_Order, string Search_Data, int pg = 1)
+    {
         ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "Name_Description" : "";
         ViewBag.SortingDate = Sorting_Order == "Date_Enroll" ? "Date_Description" : "Date";
         var UserDetail = _iUserBussiness.GetUserList(ViewBag.SortingName, Search_Data);
+        // const int pageSize = 3;
+        // if (pg < 1)
+        // {
+        //     pg = 1;
+        // }
+        // int recsCount = UserDetail.Count;
+        // var pager = new Pager(recsCount, pg, pageSize);
+        // int recSkip = (pg - 1) * pageSize;
+        // var data = UserDetail.Skip(recSkip).Take(pager.Pagesize).ToList();
+        // this.ViewBag.Pager = pager;
+        // return View(data);
         return View(UserDetail);
-
     }
+
+    [Authorize(Roles = "2")]
     public IActionResult About()
     {
         return View();
     }
 
+    [Authorize(Roles = "2")]
     public IActionResult Menu()
     {
         var UserDetail = _iProductBussiness.GetProductList();
         return View(UserDetail);
-        
+
     }
 
     [Authorize(Roles = "2")]
@@ -65,9 +78,10 @@ public class HomeController : Controller
     {
         return View();
     }
-
-    public IActionResult Contacts(){
-        var contactDetail=_iUserBussiness.GetContactList();
+    [Authorize(Roles = "1")]
+    public IActionResult Contacts()
+    {
+        var contactDetail = _iUserBussiness.GetContactList();
         return View(contactDetail);
     }
 

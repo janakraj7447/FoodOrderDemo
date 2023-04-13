@@ -51,9 +51,9 @@
     }
 </style>
 
-<h1>Login Page</h1>
+<h1>Login</h1>
 <div>
-    <span>@ViewData["Errormsg"]</span>
+    <span style="color:red; display:flex; justify-content:center;">@ViewData["Errormsg"]</span>
     @using(Html.BeginForm("Login","Login",FormMethod.Post)){
         <div class="form-group">
          <label for="UserName" class="col-md-3 control-label">Email</label>
@@ -76,7 +76,10 @@
         <div>
             <button type="submit">Login</button>
         </div>
-        <a class="text-center pt-2" asp-controller="Home" asp-action="Index"><h5>Do not have an acount? SignUp here</h5></a>
+        <a class="text-center pt-2" asp-controller="Home" asp-action="Index"><h5 style="display: flex;
+    justify-content: center;
+    color: blue;
+    font-size: 16px;">Do not have an acount? SignUp here</h5></a>
     }
 </div>
 
