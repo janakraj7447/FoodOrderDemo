@@ -9,7 +9,6 @@ namespace NS.FoodOrder.Business
         AddEditProductViewModel GetProductById(int id);
         List<Product> GetProductByCategoryId(int categoryId);
         bool ActivateDeactivateEligible(int Id);
-
         bool ActivateDeactivateProduct(int id);
        
 

@@ -52,6 +52,5 @@ namespace NS.FoodOrder.Business
             return _iProductRepository.GetProductByCategoryId(categoryId);
         }
       
-
 }
 }

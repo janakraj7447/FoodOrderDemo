@@ -34,13 +34,13 @@
         text-align: center;
     }
 </style> 
-<div class="container pt-5" style="display:flex; Justify-content:center">
+ <div class="container pt-5" style="display:flex; Justify-content:center">
  <h2>Your Order</h2>
 </div>
 <div class="container pt-5" style="display:flex; Justify-content:center">
 <table>
     <thead>
-        <tr>
+        <tr> 
          <th>OrderId</th>
          <th>Order Value</th>
          <th>Product</th>
@@ -60,16 +60,19 @@
                    ₹ @Model.FirstOrDefault().OrderDetail.BillValue
                 </td>
                 
-                  
-            
            <td>
            @foreach (var item in Model)
-                {
+               {
                     <b>@item.Product.Name</b>  
-                    
+                    <br> 
+               }
+            </td>
+               <td>
+           @foreach (var item in Model)
+                {
                     <b>@item.Quantity</b>  
-                      <br> 
-                 }
+                    <br> 
+                }
             </td>
 </tr>
     </tbody>
@@ -78,7 +81,7 @@
 
 
 <div class="text-center pt-5">
-    @Html
+ 
    <a asp-controller="Cart" asp-action="PaymentWithPaypal" asp-route-id='@orderDetailId'>
     <button type="submit" id="btnUpdate" class="btn"
         style="background-color:#e69c00;border-radius:20px;color:white;">Pay Now</button>

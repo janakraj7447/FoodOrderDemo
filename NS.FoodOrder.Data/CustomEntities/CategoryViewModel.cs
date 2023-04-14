@@ -21,6 +21,5 @@ public class CategoryViewModel
 
     public DateTime? UpdatedDate { get; set; }
 
-    // public virtual ICollection<Product> Products { get; } = new List<Product>();
 }
 }

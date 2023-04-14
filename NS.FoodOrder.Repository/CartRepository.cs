@@ -100,10 +100,20 @@ namespace NS.FoodOrder.Repository
             return _ctx.OrderReceiveds.Include("OrderDetail").Include("Product").Where(x => x.OrderDetailId == orderDetailId).ToList();
 
         }
-        public List<OrderDetail> GetSuccessOrders()
+
+        public List<OrderReceived> GetSuccessOrders(long userId = 0)
         {
-          return _ctx.OrderDetails.Include("OrderReceived").Include("Product").Include("User").Where(x => x.StatusId == Convert.ToInt32(Common.OrderStatus.Success)).ToList();
+            if (userId == 0)
+            {
+                return _ctx.OrderReceiveds.Include("OrderDetail").Include("Product").Include("User").Where(x => x.OrderDetail.StatusId == Convert.ToInt32(Common.OrderStatus.Success) 
+                                                                                                    || x.OrderDetail.StatusId == Convert.ToInt32(Common.OrderStatus.InTransit)).ToList();
+            }
+            else
+            {
+                return _ctx.OrderReceiveds.Include("OrderDetail").Include("Product").Include("User").Where(x => x.UserId == userId).ToList();
+            }
         }
+
         public bool UpdateOrderDetailStatusId(long orderDetailId, int statusId)
         {
             if (_ctx.OrderDetails.Any(x => x.Id == orderDetailId))

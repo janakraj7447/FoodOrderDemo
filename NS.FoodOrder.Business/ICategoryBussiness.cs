@@ -6,9 +6,7 @@ namespace NS.FoodOrder.Business
     {
         bool ActivateDeactivateCategory(int Id);
         bool AddEditCategory(AddEditCategoryViewModel addEditCategoryViewModel);
-
         List<Category> GetCategoryList();
-
         AddEditCategoryViewModel GetCategoryById(int id);
     }
 }

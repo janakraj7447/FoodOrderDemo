@@ -13,7 +13,7 @@ namespace NS.FoodOrder.Business
         bool AddOrderReceived(OrderReceived orderReceived);
         bool CheckPaymentIdExists(long orderDetailId);
         List<OrderReceived> GetOrderDetail(long orderDetailId);
-        List<OrderDetail> GetSuccessOrders();
+        List<OrderReceived> GetSuccessOrders(long userId = 0);
         bool UpdateOrderDetailStatusId(long orderDetailId, int statusId);
     }
 }

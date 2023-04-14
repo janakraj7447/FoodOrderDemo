@@ -23,6 +23,5 @@ namespace NS.FoodOrder.Data.CustomEntities
 
         public DateTime CreatedDate { get; set; }
 
-
     }
 }

@@ -16,9 +16,7 @@ namespace NS.FoodOrder.Data.CustomEntities
 
         [Required(ErrorMessage = "Last Name is required")]
         public string LastName { get; set; }
-
         public long RoleId { get; set; }
-
 
         [Range(1, 120, ErrorMessage = "Age must be between 1-120 in years.")]
         // [DataType(DataType.Date)] 
@@ -54,11 +52,6 @@ namespace NS.FoodOrder.Data.CustomEntities
         [Required(ErrorMessage = "Password is required")]
         public string Password { get; set; }
 
-        // [Required(ErrorMessage = "Confirm Password is required")]    
-        // [DataType(DataType.Password)]    
-        // [Compare("Password")]   
-        // public string ConfirmPassword { get; set; }
-
         public long CreatedBy { get; set; }
 
         public DateTime CreatedDate { get; set; }
@@ -67,11 +60,6 @@ namespace NS.FoodOrder.Data.CustomEntities
 
         public DateTime? UpdatedDate { get; set; }
 
-        // public virtual ICollection<Cart> Carts { get; } = new List<Cart>();
-
-        // public virtual ICollection<OrderReceived> OrderReceiveds { get; } = new List<OrderReceived>();
-
-        // public virtual Role Role { get; set; }
     }
 }
 

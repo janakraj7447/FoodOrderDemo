@@ -47,9 +47,9 @@ namespace NS.FoodOrder.Business
         {
             return _iCartRepository.GetOrderDetail(orderDetailId);
         }
-        public List<OrderDetail> GetSuccessOrders()
+        public List<OrderReceived> GetSuccessOrders(long userId = 0)
         {
-            return _iCartRepository.GetSuccessOrders();
+            return _iCartRepository.GetSuccessOrders(userId);
         }
         public bool UpdateOrderDetailStatusId(long orderDetailId, int statusId)
         {

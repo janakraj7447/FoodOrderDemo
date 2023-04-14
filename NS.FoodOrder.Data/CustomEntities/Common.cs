@@ -10,7 +10,10 @@ namespace NS.FoodOrder.Data.CustomEntities
         public enum OrderStatus{
             Pending=1,
             Success=2,
-            Failure=3
+            Failure=3,
+            InTransit=4,
+            Delivered=5,
+            Cancelled=6
         }
     }
 

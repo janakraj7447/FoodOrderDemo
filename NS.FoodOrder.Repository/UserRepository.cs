@@ -17,7 +17,6 @@ namespace NS.FoodOrder.Repository
 
         public bool AddUser(Customer customer)
         {
-
             User user = new User();
             user.FirstName = customer.FirstName;
             user.LastName = customer.LastName;
@@ -36,12 +35,8 @@ namespace NS.FoodOrder.Repository
             user.CreatedDate = DateTime.Now;
             user.IsVerified = true;
             user.IsActive = true;
-
-
             _ctx.Add(user);
-
             _ctx.SaveChanges();
-
             return true;
         }
 
@@ -52,11 +47,8 @@ namespace NS.FoodOrder.Repository
 
         public List<User> GetUserList(string Sorting_Order, string Search_Data)
         {
-
-
             var userAccount = from stu in _ctx.Users.Where(x => x.RoleId == 2) select stu;
 
-            //if search box does not empty then this will run
             if (!string.IsNullOrEmpty(Search_Data))
             {
                 userAccount = userAccount.Where(stu => stu.FirstName.Contains(Search_Data));
@@ -76,7 +68,7 @@ namespace NS.FoodOrder.Repository
                     userAccount = userAccount.OrderBy(stu => stu.FirstName);
                     break;
             }
-            // return _ctx.Users.ToList();
+          
             return userAccount.ToList();
 
         }
