@@ -33,10 +33,21 @@ public class ProductController : Controller
     }
 
     [Authorize(Roles = "1")]
-    public IActionResult Products()
+    public IActionResult Products(int pg = 1)
     {
         var UserDetail = _iProductBussiness.GetProductList();
-        return View(UserDetail);
+        const int pageSize = 6;
+            if (pg < 1)
+            {
+                pg = 1;
+            }
+            int recsCount = UserDetail.Count;
+            var pager = new Pager(recsCount, pg, pageSize);
+            int recSkip = (pg - 1) * pageSize;
+            var data = UserDetail.Skip(recSkip).Take(pager.Pagesize).ToList();
+            this.ViewBag.Pager = pager;
+            return View(data);
+        // return View(UserDetail);
     }
 
     [HttpGet]

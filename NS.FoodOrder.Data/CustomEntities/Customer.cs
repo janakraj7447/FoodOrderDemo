@@ -18,8 +18,7 @@ namespace NS.FoodOrder.Data.CustomEntities
         public string LastName { get; set; }
         public long RoleId { get; set; }
 
-        [Range(1, 120, ErrorMessage = "Age must be between 1-120 in years.")]
-        // [DataType(DataType.Date)] 
+        [Range(8, 100, ErrorMessage = "Age must be between 8-100 in years.")]
         public int Age { get; set; }
 
         public string Address { get; set; }

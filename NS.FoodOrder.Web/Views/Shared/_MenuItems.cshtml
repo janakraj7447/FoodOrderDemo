@@ -5,8 +5,6 @@
 
         @if (Model != null)
         {
-         
-          @* foreach (var item in Model.Where(x => x.IsActive == true)) *@
           for(int i=0;i<Model.Count();i++)
           {
             if(Model.ToList()[i].IsActive==true){
@@ -15,7 +13,6 @@
             <div class="col-sm-6 col-lg-4 all">
               <div class="box">
                 <div>
-
                   <div class="img-box">
                     <img src="~/UploadProduct/@item.Photo" alt="NO IMAGE FOUND" srcset="">
                   </div>
@@ -30,7 +27,6 @@
                       <h6>
                         ₹ @item.Price
                       </h6>
-                      @* <input type="text"> *@
                       <a  asp-action="AddToCart" asp-controller="Cart" asp-route-id="@item.Id">
                         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029"
@@ -55,16 +51,12 @@
                                 d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
                          c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
                             </g>
-                          </g>
-                          
-                           
+                          </g> 
                         </svg>
-                      </a>
-                      
+                      </a>                     
                     </div>
                   </div>
-
-                </div>
+               </div>
               </div>
             </div>
             }

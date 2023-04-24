@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\UploadProduct\\f5.png"
     },
     {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\f8.png",
+      "PackagePath": "staticwebassets\\UploadProduct\\f8.png"
+    },
+    {
       "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\idli.jpg",
       "PackagePath": "staticwebassets\\UploadProduct\\idli.jpg"
     },
@@ -73,8 +77,20 @@
       "PackagePath": "staticwebassets\\Uploads\\Screenshot (9).png"
     },
     {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\client1.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\client1.jpg"
+    },
+    {
       "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\client2.jpg",
       "PackagePath": "staticwebassets\\Uploads\\client2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\f6.png",
+      "PackagePath": "staticwebassets\\Uploads\\f6.png"
+    },
+    {
+      "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\favicon.png",
+      "PackagePath": "staticwebassets\\Uploads\\favicon.png"
     },
     {
       "Id": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\css\\bootstrap.css",

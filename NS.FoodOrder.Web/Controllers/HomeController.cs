@@ -13,11 +13,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Foodorder.Controllers;
 
-[Authorize]
+
 // 
 public class HomeController : Controller
 {
-
     private readonly ILogger<HomeController> _logger;
     public readonly IUserBussiness _iUserBussiness;
     public readonly ICategoryBussiness _iCategoryBussiness;
@@ -45,17 +44,6 @@ public class HomeController : Controller
         ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "Name_Description" : "";
         ViewBag.SortingDate = Sorting_Order == "Date_Enroll" ? "Date_Description" : "Date";
         var UserDetail = _iUserBussiness.GetUserList(ViewBag.SortingName, Search_Data);
-        // const int pageSize = 3;
-        // if (pg < 1)
-        // {
-        //     pg = 1;
-        // }
-        // int recsCount = UserDetail.Count;
-        // var pager = new Pager(recsCount, pg, pageSize);
-        // int recSkip = (pg - 1) * pageSize;
-        // var data = UserDetail.Skip(recSkip).Take(pager.Pagesize).ToList();
-        // this.ViewBag.Pager = pager;
-        // return View(data);
         return View(UserDetail);
     }
 
@@ -143,9 +131,5 @@ public class HomeController : Controller
 
 }
 
-//     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-//     public IActionResult Error()
-//     {
-//         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-//     }
+
 

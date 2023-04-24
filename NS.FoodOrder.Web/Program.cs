@@ -20,13 +20,9 @@ builder.Services.AddScoped<ICartBussiness,CartBussiness>();
 builder.Services.AddScoped<ICartRepository,CartRepository>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddSession();
-
-
 builder.Services.AddControllersWithViews()
     .AddViewLocalization(Microsoft.AspNetCore.Mvc.Razor.LanguageViewLocationExpanderFormat.Suffix)
     .AddDataAnnotationsLocalization();
-    
-
 builder.Services.AddDbContext<FoodOrderDBContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("FoodOrderDatabase")));
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x=>x.LoginPath=new PathString("/Login/Index"));
 

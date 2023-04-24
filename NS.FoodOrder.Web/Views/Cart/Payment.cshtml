@@ -3,7 +3,7 @@
     Layout = "_LayoutMenu";
 }
  <style>
-    /* Style the table header */
+
     thead {
         background-color: #F2F2F2;
     }
@@ -12,8 +12,6 @@
         text-align: left;
         border-bottom: 1px solid #ddd;
     }
-    /* Style the table rows */
-
     tr:nth-child(even) {
         background-color: #F2F2F2;
     }
@@ -21,18 +19,16 @@
         padding: 10px;
         border-bottom: 1px solid #ddd;
     }
-    /* Style the order ID column */
     td:first-child {
         font-weight: bold;
     }
-    /* Style the order value column */
     td:nth-child(2) {
         font-weight: bold;
     }
-    /* Style the quantity column */
     td:last-child {
         text-align: center;
     }
+
 </style> 
  <div class="container pt-5" style="display:flex; Justify-content:center">
  <h2>Your Order</h2>
@@ -81,7 +77,6 @@
 
 
 <div class="text-center pt-5">
- 
    <a asp-controller="Cart" asp-action="PaymentWithPaypal" asp-route-id='@orderDetailId'>
     <button type="submit" id="btnUpdate" class="btn"
         style="background-color:#e69c00;border-radius:20px;color:white;">Pay Now</button>

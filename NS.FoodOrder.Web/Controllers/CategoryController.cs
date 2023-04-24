@@ -34,7 +34,7 @@ public class CategoryController : Controller
 
     }
 
-       [HttpGet]
+    [HttpGet]
     public IActionResult AddEditCategory(int id)
     {
         if (id > 0)

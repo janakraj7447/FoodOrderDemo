@@ -25,6 +25,7 @@
     }
 
     a {
+        font-family: bold;
         color: black;
         text-decoration: none;
     }
@@ -85,10 +86,10 @@
                 </td>
                 <td>
                     @if(item.FirstOrDefault().OrderDetail.StatusId == Convert.ToInt32(Common.OrderStatus.Success)){
-                        @Html.ActionLink("Mark InTransit","MarkAsInTransit","Cart",new{@class = "btn btn-success", @orderDetailId = @item.FirstOrDefault().OrderDetail.Id})
+                        @Html.ActionLink("Mark InTransit","MarkAsInTransit","Cart",new{@class ="btn btn-success", @orderDetailId = @item.FirstOrDefault().OrderDetail.Id})
                     }
                     else if(item.FirstOrDefault().OrderDetail.StatusId == Convert.ToInt32(Common.OrderStatus.InTransit)){
-                        @Html.ActionLink("Mark as Delivered","MarkAsDelivered","Cart",new{@class = "btn btn-success", @orderDetailId = @item.FirstOrDefault().OrderDetail.Id})
+                        @Html.ActionLink("Mark as Delivered","MarkAsDelivered","Cart",new{@class ="btn btn-success", @orderDetailId = @item.FirstOrDefault().OrderDetail.Id})
                     }
                   
                 </td>

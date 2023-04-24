@@ -1,3 +1,4 @@
+@using System.Security.Claims;
 <!DOCTYPE html>
 <html>
 
@@ -94,7 +95,10 @@
               </a>
               @RenderBody();
              <a class="order_online" asp-area="" asp-controller="Login"
-                                asp-action="Index">Logout</a>
+                                asp-action="Logout">Logout</a>
+                                 <div class="nav-item nav-link pl-2 mt-2" style="float:right; color:white; text-align: center;">
+                <h5 style="display:flex; justify-content:center;text-align: center;">WELCOME : @User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value</h5>
+               </div>
             </div>
           </div>
         </nav>

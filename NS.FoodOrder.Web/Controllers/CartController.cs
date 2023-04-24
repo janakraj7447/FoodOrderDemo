@@ -54,9 +54,7 @@ public class CartController : Controller
         CartViewModel cartViewModel = new CartViewModel();
         cartViewModel.ProductId = id;
         cartViewModel.UserId = Convert.ToInt64(userId);
-
         _iCartBussiness.AddToCart(cartViewModel);
-        // return View();
         return RedirectToAction(actionName: "ViewCart", controllerName: "Cart");
 
 
@@ -112,8 +110,6 @@ public class CartController : Controller
 
     public IActionResult Payment(long orderId)
     {
-        // if(!_iCartBussiness.CheckPaymentIdExists(orderId))
-        //     return RedirectToAction(actionName:"Menu" , controllerName: "Home");
         return View(_iCartBussiness.GetOrderDetail(orderId));
     }
 
@@ -148,7 +144,7 @@ public class CartController : Controller
                         paypalRedirectUrl = lnk.href;
                     }
                 }
-              
+
                 httpContextAccessor.HttpContext.Session.SetString("payment", createdPayment.id);
                 return Redirect(paypalRedirectUrl);
             }
@@ -174,8 +170,9 @@ public class CartController : Controller
         return View("SuccessView");
     }
     public IActionResult MyOrders()
-    {
+    {   
         var myOrders = _iCartBussiness.GetSuccessOrders(Convert.ToInt64(HttpContext.User.Claims.FirstOrDefault(x => x.Type == "UserId")?.Value));
+        // if((Convert.ToInt32(Common.OrderStatus.Success))>2)
         return View("PaymentSuccess", myOrders);
     }
     public IActionResult MarkAsInTransit(long orderDetailId)
@@ -229,7 +226,7 @@ public class CartController : Controller
             cancel_url = redirectUrl + "&Cancel=true",
             return_url = redirectUrl
         };
-       
+
         var amount = new Amount()
         {
             currency = "USD",
@@ -251,7 +248,7 @@ public class CartController : Controller
             transactions = transactionList,
             redirect_urls = redirUrls
         };
-       
+
         return this.payment.Create(apiContext);
     }
 

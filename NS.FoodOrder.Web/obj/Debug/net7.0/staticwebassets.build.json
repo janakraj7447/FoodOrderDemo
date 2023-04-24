@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jRM6HWxa1T10uSqr57kfnvhhPxL7OSDTXP0+70MsHhg=",
+  "Hash": "kwbF7fVQzvnKECWx3Z/i9h6tP5b866x5SW+x2KnLG2Q=",
   "Source": "NS.FoodOrder.Web",
   "BasePath": "_content/NS.FoodOrder.Web",
   "Mode": "Default",
@@ -1615,6 +1615,23 @@
       "OriginalItemSpec": "wwwroot\\UploadProduct\\f5.png"
     },
     {
+      "Identity": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\f8.png",
+      "SourceId": "NS.FoodOrder.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\",
+      "BasePath": "_content/NS.FoodOrder.Web",
+      "RelativePath": "UploadProduct/f8.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\UploadProduct\\f8.png"
+    },
+    {
       "Identity": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\UploadProduct\\idli.jpg",
       "SourceId": "NS.FoodOrder.Web",
       "SourceType": "Discovered",
@@ -1700,6 +1717,23 @@
       "OriginalItemSpec": "wwwroot\\UploadProduct\\thali.jpg"
     },
     {
+      "Identity": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\client1.jpg",
+      "SourceId": "NS.FoodOrder.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\",
+      "BasePath": "_content/NS.FoodOrder.Web",
+      "RelativePath": "Uploads/client1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\client1.jpg"
+    },
+    {
       "Identity": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\client2.jpg",
       "SourceId": "NS.FoodOrder.Web",
       "SourceType": "Discovered",
@@ -1715,6 +1749,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\client2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\f6.png",
+      "SourceId": "NS.FoodOrder.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\",
+      "BasePath": "_content/NS.FoodOrder.Web",
+      "RelativePath": "Uploads/f6.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\f6.png"
+    },
+    {
+      "Identity": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\favicon.png",
+      "SourceId": "NS.FoodOrder.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\",
+      "BasePath": "_content/NS.FoodOrder.Web",
+      "RelativePath": "Uploads/favicon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\favicon.png"
     },
     {
       "Identity": "C:\\Users\\janak.raj\\FoodOrder\\NS.FoodOrder.Web\\wwwroot\\Uploads\\Screenshot (13).png",

@@ -37,7 +37,7 @@ namespace Foodorder.Controllers
             var userDetails=_iUserBussiness.GetUserDetailsByEmail(loginViewModel.Email);
             if(userDetails!=null && userDetails.IsActive && BCrypt.Net.BCrypt.Verify(loginViewModel.Password,userDetails.Password)){
 
-                var claims=new Claim[]{new Claim(ClaimTypes.Email,userDetails.Email),new Claim(ClaimTypes.Role,userDetails.RoleId.ToString()),new Claim("UserId",userDetails.Id.ToString())};
+                var claims=new Claim[]{new Claim(ClaimTypes.Email,userDetails.Email),new Claim(ClaimTypes.Role,userDetails.RoleId.ToString()),new Claim("UserId",userDetails.Id.ToString()),new Claim(ClaimTypes.Name,userDetails.FirstName)};
                 var identity=new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
                 HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,new ClaimsPrincipal(identity));
                 if(userDetails.RoleId==1){
